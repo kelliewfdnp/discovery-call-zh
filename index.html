@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Radical Wellness - 功能医学探索咨询</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            future: { hoverOnlyWhenSupported: true },
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FAF8F5',
+                            100: '#F3EDE2',
+                            200: '#E8DCC8',
+                            300: '#D5BE93',
+                            400: '#C3A062',
+                            500: '#B08B48',
+                            600: '#967233',
+                            700: '#765722',
+                            800: '#553E17',
+                            900: '#36260C',
+                        },
+                        cream: '#FAF8F5',
+                        darkText: '#1C1917',
+                        mutedText: '#57534E'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'sans-serif'],
+                        serif: ['Playfair Display', 'Noto Serif SC', 'Songti SC', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+.symptom-desc{min-height:3lh}
+.fa-arrow-left-right{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M8%203L4%207l4%204M4%207h16M16%2021l4-4-4-4M20%2017H4%27/%3E%3C/svg%3E")}
+@media (min-width:1024px){html:not(.dark) .symptom-item-btn.is-active{position:relative}
+html:not(.dark) .symptom-item-btn.is-active::after{content:"";position:absolute;right:-13px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:9px solid #C5A880}}
+button,a{-webkit-tap-highlight-color:transparent}
+.dark [class~="text-[#B08B48]"]:not([class*="dark:text-"]){color:#C5A880}
+.dark #quiz-progress-bar{background-color:#C5A880}
+.fa-flask{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M10%202v7.527a2%202%200%200%201-.211.896L4.72%2020.55a1%201%200%200%200%20.9%201.45h12.76a1%201%200%200%200%20.9-1.45l-5.069-10.127A2%202%200%200%201%2014%209.527V2%22/%3E%3Cpath%20d%3D%22M8.5%202h7M7%2016h10%22/%3E%3C/svg%3E")}
+.dark .gold-label,.dark .gold-label .fa-solid,.gold-label-always{color:#E5CE9F}
+.dark .hero-accent-text{background:linear-gradient(135deg,#F9F2E4 0%,#E5CE9F 50%,#C5A880 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;padding-right:.06em}
+.fa-bars{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M4%206h16M4%2012h16M4%2018h16%22/%3E%3C/svg%3E")}
+.fa-lightbulb{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20transform%3D%22translate%282.4%203.8%29%20scale%280.8%29%22%3E%3Cpath%20d%3D%22M12%201.5a7.5%207.5%200%200%200-4.4%2013.6V17a1%201%200%200%200%201%201h6.8a1%201%200%200%200%201-1v-1.9A7.5%207.5%200%200%200%2012%201.5z%22%20fill%3D%22black%22/%3E%3Crect%20x%3D%228.8%22%20y%3D%2219.2%22%20width%3D%226.4%22%20height%3D%221.7%22%20rx%3D%220.85%22%20fill%3D%22black%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2222%22%20width%3D%224%22%20height%3D%221.5%22%20rx%3D%220.75%22%20fill%3D%22black%22/%3E%3C/g%3E%3Cpath%20d%3D%22M12%203.2V0.9M6.5%205.5L4.8%203.8M17.5%205.5L19.2%203.8M4.2%2011H1.8M19.8%2011H22.2%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%3C/svg%3E");filter:drop-shadow(0 0 2.5px rgba(176,139,72,.55))}
+.fa-solid{display:inline-block;width:1em;height:1em;vertical-align:-0.125em;background-color:currentColor;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
+.fa-arrow-right{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%2012h14M12%205l7%207-7%207%22/%3E%3C/svg%3E")}
+.fa-bolt{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M13%202L3%2014h9l-1%208%2010-12h-9l1-8z%22/%3E%3C/svg%3E")}
+.fa-book-open{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M2%203h6a4%204%200%200%201%204%204v14a3%203%200%200%200-3-3H2zM22%203h-6a4%204%200%200%200-4%204v14a3%203%200%200%201%203-3h7z%22/%3E%3C/svg%3E")}
+.fa-calendar-check{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223%22%20y%3D%224%22%20width%3D%2218%22%20height%3D%2218%22%20rx%3D%222%22/%3E%3Cpath%20d%3D%22M16%202v4M8%202v4M3%2010h18M9%2016l2%202%204-4%22/%3E%3C/svg%3E")}
+.fa-check{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M20%206L9%2017l-5-5%22/%3E%3C/svg%3E")}
+.fa-chevron-right{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9%2018l6-6-6-6%22/%3E%3C/svg%3E")}
+.fa-circle-check{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22/%3E%3Cpath%20d%3D%22M9%2012l2%202%204-4%22/%3E%3C/svg%3E")}
+.fa-compass{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22/%3E%3Cpath%20d%3D%22M16.24%207.76l-2.12%206.36-6.36%202.12%202.12-6.36z%22/%3E%3C/svg%3E")}
+.fa-feather-pointed{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cdefs%3E%3Cmask%20id%3D%22m%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%22-12%22%20y%3D%22-12%22%20width%3D%2248%22%20height%3D%2248%22%3E%3Crect%20x%3D%22-12%22%20y%3D%22-12%22%20width%3D%2248%22%20height%3D%2248%22%20fill%3D%22white%22/%3E%3Cg%20stroke%3D%22black%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%204.5V19%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M12%2016L8.3%2012.6M12%2012.6L7.9%209M12%209.2L9.4%206.8M12%2016l3.7-3.4M12%2012.6L16.1%209M12%209.2l2.6-2.4%22%20stroke-width%3D%221.1%22%20stroke-linecap%3D%22round%22/%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg%20transform%3D%22rotate%2840%2012%2012%29%22%3E%3Cpath%20d%3D%22M12%201.5C17.5%205%2019%2011%2015.5%2016C14.5%2017.4%2013.2%2018.4%2012%2019C10.8%2018.4%209.5%2017.4%208.5%2016C5%2011%206.5%205%2012%201.5Z%22%20fill%3D%22black%22%20mask%3D%22url%28%23m%29%22/%3E%3Cpath%20d%3D%22M12%2018V23%22%20stroke%3D%22black%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22/%3E%3C/g%3E%3C/svg%3E")}
+.fa-heart-pulse{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M19%2014c1.49-1.46%203-3.21%203-5.5A5.5%205.5%200%200%200%2016.5%203c-1.76%200-3%20.5-4.5%202-1.5-1.5-2.74-2-4.5-2A5.5%205.5%200%200%200%202%208.5c0%202.3%201.5%204.05%203%205.5l7%207z%22/%3E%3Cpath%20d%3D%22M3.22%2012H9.5l.5-1%202%204.5%202-7%201.5%203.5h5.27%22/%3E%3C/svg%3E")}
+.fa-microscope{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M6%2018h8M3%2022h18M14%2022a7%207%200%201%200%200-14h-1M9%2014h2M9%2012a2%202%200%200%201-2-2V6h6v4a2%202%200%200%201-2%202zM12%206V3a1%201%200%200%200-1-1H9a1%201%200%200%200-1%201v3%22/%3E%3C/svg%3E")}
+.fa-minus{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%2012h14%22/%3E%3C/svg%3E")}
+.fa-moon{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M20.354%2015.354A9%209%200%200%201%208.646%203.646%209.003%209.003%200%200%200%2012%2021a9.003%209.003%200%200%200%208.354-5.646z%27/%3E%3C/svg%3E")}
+.fa-plus{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%2012h14M12%205v14%22/%3E%3C/svg%3E")}
+.fa-sliders{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M21%204h-7M10%204H3M21%2012h-9M8%2012H3M21%2020h-5M12%2020H3M14%202v4M8%2010v4M16%2018v4%22/%3E%3C/svg%3E")}
+.fa-star{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%202l3.09%206.26L22%209.27l-5%204.87%201.18%206.88L12%2017.77l-6.18%203.25L7%2014.14%202%209.27l6.91-1.01z%22/%3E%3C/svg%3E")}
+.fa-sun{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%3E%3Ccircle%20cx%3D%2712%27%20cy%3D%2712%27%20r%3D%274.14%27%20fill%3D%27black%27/%3E%3Cpath%20d%3D%27M12%204.4V1.8M12%2019.6v2.6M4.4%2012H1.8M19.6%2012h2.6M6.63%206.63L4.79%204.79M17.37%2017.37l1.84%201.84M6.63%2017.37l-1.84%201.84M17.37%206.63l1.84-1.84%27%20stroke%3D%27black%27%20stroke-width%3D%271.75%27%20stroke-linecap%3D%27round%27%20fill%3D%27none%27/%3E%3C/svg%3E")}
+.fa-user-shield{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%203l7%203v5c0%205-3%208-7%2010-4-2-7-5-7-10V6z%22/%3E%3Cpath%20d%3D%22M9%2012l2%202%204-4%22/%3E%3C/svg%3E")}
+.fa-video{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M22%208l-6%204%206%204V8z%22/%3E%3Crect%20x%3D%222%22%20y%3D%226%22%20width%3D%2214%22%20height%3D%2212%22%20rx%3D%222%22/%3E%3C/svg%3E")}
+.fa-wheat-awn-circle-exclamation{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22/%3E%3Cpath%20d%3D%22M12%208v4M12%2016h.01%22/%3E%3C/svg%3E")}
+.fa-xmark{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M18%206L6%2018M6%206l12%2012%22/%3E%3C/svg%3E")}
+
+        html{scroll-padding-top:var(--hdr-h,80px)}
+        h1,h2,h3{text-wrap:balance}
+        body{line-break:strict}
+        header.sticky{padding-top:env(safe-area-inset-top,0px)}
+        .gradient-text {
+            background: linear-gradient(135deg, #B08B48 0%, #765722 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .gradient-text {
+            background: linear-gradient(135deg, #E8DCC8 0%, #B08B48 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-[#FAF8F5] dark:bg-[#0C0A09] text-[#1C1917] dark:text-stone-100 font-sans antialiased transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white/85 dark:bg-[#0C0A09]/90 backdrop-blur-md border-b border-[#E8DCC8]/50 dark:border-stone-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between gap-4">
+            
+            <!-- Brand Logo & Subtitle -->
+            <a href="#overview" onclick="smoothScroll(event, 'overview')" class="flex items-center gap-3 group shrink-0 lg:justify-self-start">
+                <div class="w-9 h-9 rounded-full bg-[#7A1C2E] dark:bg-stone-800 border border-[#7A1C2E] dark:border-[#B08B48]/70 flex items-center justify-center text-[#B08B48] group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-lightbulb text-lg text-white dark:text-[#C5A880]"></i>
+                </div>
+                <div>
+                    <!-- Reduced font size by 2 sizes: text-sm sm:text-base -->
+                    <span class="font-serif text-sm sm:text-base font-semibold tracking-widest text-[#1C1917] dark:text-[#FAF8F5] uppercase block leading-tight">RADICAL WELLNESS</span>
+                    <!-- Reduced font size by 2 sizes: text-[10px] sm:text-[11px] -->
+                    <span class="gold-label text-[10px] sm:text-[11px] font-medium tracking-widest text-[#B08B48] uppercase block">功能医学探索咨询</span>
+                </div>
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-xs font-medium tracking-widest text-stone-600 dark:text-stone-300 uppercase">
+                <a href="#prerequisite" onclick="smoothScroll(event, 'prerequisite')" class="hover:text-[#B08B48] dark:hover:text-[#B08B48] transition-colors">概览</a>
+                <a href="#decoder" onclick="smoothScroll(event, 'decoder')" class="hover:text-[#B08B48] dark:hover:text-[#B08B48] transition-colors">健康解码器</a>
+                <a href="#framework" onclick="smoothScroll(event, 'framework')" class="hover:text-[#B08B48] dark:hover:text-[#B08B48] transition-colors">功能框架</a>
+                <a href="#readiness" onclick="smoothScroll(event, 'readiness')" class="hover:text-[#B08B48] dark:hover:text-[#B08B48] transition-colors">适配评估</a>
+                <a href="#faq" onclick="smoothScroll(event, 'faq')" class="hover:text-[#B08B48] dark:hover:text-[#B08B48] transition-colors">常见问题</a>
+            </nav>
+
+            <!-- Actions Right -->
+            <div class="flex items-center gap-2 sm:gap-3 lg:justify-self-end">
+                <!-- Perspective Switch (Simple / Clinical) -->
+                <div class="relative hidden sm:block">
+                    <button type="button" id="mode-menu-btn" onclick="toggleModeMenu(event)" aria-haspopup="true" aria-expanded="false" aria-label="切换视角：通俗版或临床版" title="切换视角" class="w-9 h-9 rounded-full bg-[#F3EDE2] dark:bg-stone-800 border border-[#E8DCC8] dark:border-[#B08B48]/70 text-[#B08B48] dark:text-[#F0DDB0] flex items-center justify-center hover:bg-[#E8DCC8]/60 dark:hover:bg-stone-700 transition-all shrink-0">
+                        <i class="fa-solid fa-arrow-left-right text-lg"></i>
+                    </button>
+                    <div id="mode-menu" class="hidden absolute right-0 top-full mt-3 w-52 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 shadow-xl p-1.5 z-[70]">
+                        <button type="button" data-mode="simple" onclick="setPerspectiveMode('simple')" class="mode-opt w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-[#1C1917] dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">
+                            <i class="fa-solid fa-book-open text-base text-stone-500 dark:text-[#C5A880]"></i>
+                            <span class="flex-1 text-left">通俗版</span>
+                            <i class="fa-solid fa-check mode-check text-sm text-[#B08B48]" style="visibility:visible"></i>
+                        </button>
+                        <button type="button" data-mode="clinical" onclick="setPerspectiveMode('clinical')" class="mode-opt w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-[#1C1917] dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">
+                            <i class="fa-solid fa-microscope text-base text-stone-500 dark:text-[#C5A880]"></i>
+                            <span class="flex-1 text-left">临床版</span>
+                            <i class="fa-solid fa-check mode-check text-sm text-[#B08B48]" style="visibility:hidden"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dark/Light Circle Button -->
+                <button type="button" onclick="toggleTheme(event)" class="w-9 h-9 rounded-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-[#B08B48]/70 text-stone-700 dark:text-[#F0DDB0] flex items-center justify-center hover:bg-stone-50 dark:hover:bg-stone-700 transition-all shrink-0 shadow-xs" title="切换浅色／深色模式">
+                    <i id="theme-icon" class="fa-solid fa-moon text-lg"></i>
+                </button>
+
+                <!-- Book Call CTA -->
+                <a href="#" onclick="openDiscoveryModal(event)" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#B08B48] text-white font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all shadow-sm shrink-0">
+                    预约咨询
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu(event)" aria-label="打开菜单" aria-expanded="false" class="lg:hidden w-9 h-9 rounded-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-[#F0DDB0] flex items-center justify-center hover:bg-stone-50 dark:hover:bg-stone-700 transition-all shrink-0 shadow-xs">
+                    <i id="menu-icon" class="fa-solid fa-bars text-base"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-[#E8DCC8]/60 dark:border-stone-800 bg-white/95 dark:bg-[#0C0A09]/95 backdrop-blur-md">
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col text-xs font-semibold tracking-widest text-stone-700 dark:text-stone-200 uppercase">
+                <a href="#prerequisite" onclick="closeMobileMenu(); smoothScroll(event, 'prerequisite')" class="py-3.5 border-b border-stone-100 dark:border-stone-800 hover:text-[#B08B48]">概览</a>
+                <a href="#decoder" onclick="closeMobileMenu(); smoothScroll(event, 'decoder')" class="py-3.5 border-b border-stone-100 dark:border-stone-800 hover:text-[#B08B48]">健康解码器</a>
+                <a href="#framework" onclick="closeMobileMenu(); smoothScroll(event, 'framework')" class="py-3.5 border-b border-stone-100 dark:border-stone-800 hover:text-[#B08B48]">功能框架</a>
+                <a href="#readiness" onclick="closeMobileMenu(); smoothScroll(event, 'readiness')" class="py-3.5 border-b border-stone-100 dark:border-stone-800 hover:text-[#B08B48]">适配评估</a>
+                <a href="#faq" onclick="closeMobileMenu(); smoothScroll(event, 'faq')" class="py-3.5 hover:text-[#B08B48]">常见问题</a>
+                <div class="pt-3 pb-1 flex flex-col gap-2.5">
+                    <button type="button" onclick="togglePerspectiveMode(event)" class="sm:hidden w-full py-2.5 rounded-full bg-[#F3EDE2] dark:bg-stone-800 border border-[#E8DCC8] dark:border-[#B08B48]/70 text-[#B08B48] dark:text-[#F0DDB0] text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-arrow-left-right text-[#B08B48] dark:text-[#F0DDB0] text-sm"></i>
+                        <span class="mode-label">通俗版</span>
+                    </button>
+                    <a href="#" onclick="closeMobileMenu(); openDiscoveryModal(event)" class="w-full py-3 rounded-full bg-[#B08B48] text-white text-center font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all shadow-sm">预约咨询</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section id="overview" class="text-center pt-12 pb-16 px-4 max-w-5xl mx-auto">
+            <div class="gold-label inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3EDE2] dark:bg-stone-800/80 text-[#B08B48] text-xs font-semibold uppercase tracking-wider mb-8 border border-[#E8DCC8] dark:border-stone-700">
+                <span class="relative flex h-[8px] w-[8px] shrink-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" style="animation-duration:1.25s"></span><span class="relative inline-flex h-[8px] w-[8px] rounded-full bg-emerald-500"></span></span>
+                <i class="fa-solid fa-video text-[#B08B48]"></i>
+                <span>一对一私人线上探索咨询</span>
+            </div>
+            
+            <!-- Headline revised: Highlight only "Root-Cause" -->
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-[#1C1917] dark:text-stone-100 leading-[1.3] max-w-4xl mx-auto">
+                看看功能医学的<span class="hero-accent-text font-serif not-italic text-[#9B1B30] font-normal">根源调查</span><br>
+                是否适合你。
+            </h1>
+
+            <!-- Dynamic Hero Perspective Box -->
+            <div class="mt-10 max-w-2xl mx-auto bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-2xl p-6 sm:p-7 shadow-xl shadow-stone-200/40 dark:shadow-none text-left relative overflow-hidden transition-all duration-300">
+                <div class="gold-label flex items-center justify-between mb-3 text-xs font-medium uppercase tracking-wider text-[#B08B48]">
+                    <span id="hero-card-tag" class="flex items-center gap-2">
+                        <i class="fa-solid fa-compass"></i>
+                        视角：通俗比喻
+                    </span>
+                    <span class="text-stone-400 dark:text-stone-500 text-[11px] hidden sm:inline">右上角切换模式</span>
+                </div>
+                <p id="hero-card-text" class="text-stone-600 dark:text-stone-300 text-sm sm:text-base leading-relaxed font-sans">
+                    在决定进行复杂检测或大幅调整生活方式之前，这场初次探索咨询是我们彼此认识的起点。在这通免费的一对一视频通话中，我们会梳理你的健康时间线，倾听你的身体一路经历了什么，并评估功能医学调查是否真正适合你的目标。
+                </p>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#" onclick="openDiscoveryModal(event)" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#B08B48] text-white font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all shadow-md flex items-center justify-center gap-2">
+                    <span>申请探索咨询</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#decoder" onclick="smoothScroll(event, 'decoder')" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 font-semibold text-xs tracking-wider uppercase hover:bg-stone-50 dark:hover:bg-stone-700 transition-all shadow-xs flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-heart-pulse text-[#B08B48] dark:text-[#C5A880]"></i>
+                    <span>探索健康解码器</span>
+                </a>
+            </div>
+
+            <!-- Value Props Badges -->
+            <div class="mt-12 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-stone-600 dark:text-stone-400 font-medium">
+                <div class="flex items-center gap-2 bg-white/80 dark:bg-stone-800/50 px-4 py-2 rounded-lg border border-stone-200/60 dark:border-stone-700/40 shadow-xs">
+                    <i class="fa-solid fa-check text-[#B08B48] dark:text-[#C5A880]"></i>
+                    <span>免费 · 无任何义务</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/80 dark:bg-stone-800/50 px-4 py-2 rounded-lg border border-stone-200/60 dark:border-stone-700/40 shadow-xs">
+                    <i class="fa-solid fa-sliders text-[#B08B48] dark:text-[#C5A880]"></i>
+                    <span>双向适配评估</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/80 dark:bg-stone-800/50 px-4 py-2 rounded-lg border border-stone-200/60 dark:border-stone-700/40 shadow-xs">
+                    <i class="fa-solid fa-user-shield text-[#B08B48] dark:text-[#C5A880]"></i>
+                    <span>一对一私人咨询</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 必经的第一步 SECTION -->
+        <section id="prerequisite" class="py-16 bg-white dark:bg-stone-900/40 border-y border-[#E8DCC8]/60 dark:border-stone-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-2">必经的第一步</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">为什么要从探索咨询开始？</h2>
+                    <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base">
+                        我们不推销千篇一律的套餐。我们会先确认，我们是否是适合帮助你的团队。
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Standard Consult Card -->
+                    <div class="bg-[#FAF8F5] dark:bg-stone-800/60 rounded-2xl p-6 sm:p-8 border border-stone-200 dark:border-stone-700 shadow-xs flex flex-col justify-between">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/70 dark:bg-stone-700 text-stone-700 dark:text-stone-300 text-xs font-medium mb-4">
+                                <span>常规简短问诊</span>
+                            </div>
+                            <h3 class="font-serif text-xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">仓促掩盖症状</h3>
+                            <p class="text-stone-600 dark:text-stone-300 text-sm leading-relaxed mb-6">
+                                一般问诊往往直接开药，或把持续不退的症状归为“检验结果正常”，却没有花时间了解你独特的健康经历与生活背景。
+                            </p>
+                            <ul class="space-y-3 text-sm text-stone-600 dark:text-stone-300">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-xmark text-rose-500 text-base mt-0.5"></i>
+                                    <span>完全没有时间探究根本原因</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-xmark text-rose-500 text-base mt-0.5"></i>
+                                    <span>千篇一律的套装建议</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-xmark text-rose-500 text-base mt-0.5"></i>
+                                    <span>无法解释的疲倦或胀气被说成“心理作用”</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Discovery Session Card -->
+                    <div class="bg-white dark:bg-stone-800/90 rounded-2xl p-6 sm:p-8 border-2 border-[#B08B48] shadow-md flex flex-col justify-between relative overflow-hidden">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F3EDE2] dark:bg-stone-700 text-[#1C1917] dark:text-[#C5A880] text-xs font-semibold mb-4">
+                                <i class="fa-solid fa-star text-[#B08B48] dark:text-[#C5A880]"></i>
+                                <span>探索咨询</span>
+                            </div>
+                            <h3 class="font-serif text-xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">双向适配与契合沟通</h3>
+                            <p class="text-stone-600 dark:text-stone-300 text-sm leading-relaxed mb-6">
+                                一场专注的一对一对话：我们会梳理你的症状时间线，了解你已经尝试过的方法，并厘清我们的 FDNP 功能医学方法是否符合你的身体恢复所需。
+                            </p>
+                            <ul class="space-y-3 text-sm text-stone-700 dark:text-stone-300">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-[#B08B48] dark:text-[#C5A880] text-base mt-0.5"></i>
+                                    <span>找出潜在的隐藏压力模式</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-[#B08B48] dark:text-[#C5A880] text-base mt-0.5"></i>
+                                    <span>判断是否适合进行功能性调查</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-check text-[#B08B48] dark:text-[#C5A880] text-base mt-0.5"></i>
+                                    <span>清晰的后续建议路线图</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-stone-100 dark:border-stone-700">
+                            <a href="#" onclick="openDiscoveryModal(event)" class="w-full py-3 rounded-xl bg-[#B08B48] text-white font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all flex items-center justify-center gap-2">
+                                <span>预约免费探索咨询</span>
+                                <i class="fa-solid fa-chevron-right text-[11px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 互动式健康解码器 -->
+        <section id="decoder" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-2">互动式健康解码器</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-4">你的身体想告诉你什么？</h2>
+                <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base leading-relaxed">
+                    请在下方选择你最关注的方面，开启一场私人探索咨询之旅，我们将一起判断功能医学如何提升你的整体健康。
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-6 items-start">
+                <!-- Left Vertical Selection List -->
+                <div class="lg:col-span-5 lg:self-center space-y-3" id="symptom-list">
+                    <button type="button" onclick="selectSymptom(event, 0)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 is-active bg-[#EDE5D4] text-[#1C1917] border-[#C5A880] font-semibold dark:bg-[#B08B48] dark:text-white dark:border-[#B08B48] shadow-md flex items-center justify-between" data-index="0">
+                        <span class="font-medium text-sm">下午三点能量低谷与午后崩溃</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <button type="button" onclick="selectSymptom(event, 1)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="1">
+                        <span class="font-medium text-sm">饭后胀气与腹胀</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <button type="button" onclick="selectSymptom(event, 2)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="2">
+                        <span class="font-medium text-sm">脑雾与注意力低落</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <button type="button" onclick="selectSymptom(event, 3)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="3">
+                        <span class="font-medium text-sm">凌晨三点惊醒、思绪停不下来</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <button type="button" onclick="selectSymptom(event, 4)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="4">
+                        <span class="font-medium text-sm">顽固体重与代谢阻力</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <button type="button" onclick="selectSymptom(event, 5)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="5">
+                        <span class="font-medium text-sm">皮肤反复发炎与成年痘痘</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Right Side Detail Exploration Panel -->
+                <div id="decoder-panel" class="lg:col-span-7 bg-white dark:bg-stone-900 border border-[#E8DCC8] dark:border-stone-700 rounded-2xl p-6 sm:p-8 shadow-sm min-h-[440px] flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between pb-4 border-b border-[#E8DCC8]/60 dark:border-stone-800 mb-6">
+                            <span class="gold-label text-xs font-medium tracking-widest text-[#B08B48] uppercase">症状探索</span>
+                            <span id="perspective-tag" class="text-[11px] font-medium tracking-wider text-stone-500 uppercase bg-[#F3EDE2] dark:bg-stone-800 px-2.5 py-1 rounded-md">
+                                通俗比喻
+                            </span>
+                        </div>
+
+                        <h3 id="symptom-title" class="font-serif text-2xl font-normal text-[#1C1917] dark:text-stone-100 mb-4">
+                            下午三点能量低谷与午后崩溃
+                        </h3>
+
+                        <p id="symptom-description" class="symptom-desc text-stone-600 dark:text-stone-300 text-sm leading-relaxed mb-6">
+                            你身体细胞里的“火星塞”可能正缺少矿物质的“电压”。当持续的压力或血糖下滑耗尽细胞储备，你的能量引擎就会在午餐后进入“跛行模式”。
+                        </p>
+
+                        <div class="bg-[#FAF8F5] dark:bg-stone-800/60 rounded-xl p-5 border border-[#E8DCC8]/60 dark:border-stone-700/60">
+                            <h4 class="text-xs font-medium uppercase tracking-wider text-[#1C1917] dark:text-[#C5A880] mb-3">
+                                在免费探索咨询中，我们会探讨：
+                            </h4>
+                            <ul id="symptom-bullets" class="space-y-2.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-[#B08B48] dark:text-[#C5A880] font-bold">•</span>
+                                    <span>了解你每天的压力节奏与用餐时间习惯</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-[#B08B48] dark:text-[#C5A880] font-bold">•</span>
+                                    <span>评估是否与矿物质或血糖波动有关</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-[#B08B48] dark:text-[#C5A880] font-bold">•</span>
+                                    <span>判断是否需要进行功能性代谢检测</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <a href="#" onclick="openDiscoveryModal(event)" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#B08B48] text-white font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all shadow-sm gap-2">
+                            <span>免费通话，聊聊你的症状</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 功能医学框架 -->
+        <section id="framework" class="py-16 bg-[#FAF8F5] dark:bg-stone-900/50 border-y border-[#E8DCC8]/60 dark:border-stone-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-2">功能医学框架</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">若合作，我们会评估的系统</h2>
+                    <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base">
+                        在初次探索咨询中，我们会评估这套“三大支柱”功能性调查是否符合你身体的需要。
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Pillar 1 -->
+                    <div class="bg-white dark:bg-stone-800/80 rounded-2xl p-6 border border-stone-200 dark:border-stone-700 shadow-xs flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-[#F3EDE2] dark:bg-stone-700 flex items-center justify-center text-[#B08B48] mb-4">
+                                <i class="fa-solid fa-bolt text-base"></i>
+                            </div>
+                            <h3 class="font-serif text-lg font-normal text-[#1C1917] dark:text-stone-100 mb-1">代谢生物能量</h3>
+                            <span class="gold-label text-[11px] font-medium tracking-widest uppercase text-[#B08B48] block mb-3">细胞与神经递质概况</span>
+                            <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mb-4">
+                                评估你的细胞产生能量、处理营养、清除代谢废物以及平衡神经化学信号通路的效率。
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-100 dark:border-stone-700 text-xs">
+                            <span class="font-medium text-[#1C1917] dark:text-stone-200">调查范围：</span>
+                            <p class="text-stone-500 dark:text-stone-400 mt-0.5">线粒体燃料、营养辅因子与全身排毒负荷。</p>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="bg-white dark:bg-stone-800/80 rounded-2xl p-6 border border-stone-200 dark:border-stone-700 shadow-xs flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-[#F3EDE2] dark:bg-stone-700 flex items-center justify-center text-[#B08B48] mb-4">
+                                <i class="fa-solid fa-flask text-base"></i>
+                            </div>
+                            <h3 class="font-serif text-lg font-normal text-[#1C1917] dark:text-stone-100 mb-1">肠道微生态</h3>
+                            <span class="gold-label text-[11px] font-medium tracking-widest uppercase text-[#B08B48] block mb-3">微生物群与屏障完整性</span>
+                            <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mb-4">
+                                探究消化效率、有益菌与过度增生菌群的比例、炎症标志物以及肠道黏膜屏障的健康。
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-100 dark:border-stone-700 text-xs">
+                            <span class="font-medium text-[#1C1917] dark:text-stone-200">调查范围：</span>
+                            <p class="text-stone-500 dark:text-stone-400 mt-0.5">消化力、菌群平衡与肠道屏障完整性。</p>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="bg-white dark:bg-stone-800/80 rounded-2xl p-6 border border-stone-200 dark:border-stone-700 shadow-xs flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-[#F3EDE2] dark:bg-stone-700 flex items-center justify-center text-[#B08B48] mb-4">
+                                <i class="fa-solid fa-sliders text-base"></i>
+                            </div>
+                            <h3 class="font-serif text-lg font-normal text-[#1C1917] dark:text-stone-100 mb-1">激素清除</h3>
+                            <span class="gold-label text-[11px] font-medium tracking-widest uppercase text-[#B08B48] block mb-3">内分泌与肾上腺曲线</span>
+                            <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mb-4">
+                                不只看表面的激素水平，更评估昼夜压力曲线（皮质醇／褪黑激素）以及肝脏每日清除激素的效率。
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-100 dark:border-stone-700 text-xs">
+                            <span class="font-medium text-[#1C1917] dark:text-stone-200">调查范围：</span>
+                            <p class="text-stone-500 dark:text-stone-400 mt-0.5">昼夜压力节律、甲状腺相互作用与雌激素代谢。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 互动式适配评估 -->
+        <section id="readiness" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-stone-900 border border-[#E8DCC8] dark:border-stone-800 rounded-2xl p-6 sm:p-10 shadow-md">
+                
+                <!-- Progress Indicator Bar -->
+                <div class="gold-label flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#B08B48] mb-4">
+                    <span id="quiz-step-indicator">第 1 步 / 共 3 步</span>
+                    <span id="quiz-progress-text">已完成 33%</span>
+                </div>
+                <div class="w-full bg-stone-100 dark:bg-stone-800 h-2 rounded-full mb-8 overflow-hidden">
+                    <div id="quiz-progress-bar" class="bg-[#B08B48] h-full transition-all duration-300" style="width: 33%"></div>
+                </div>
+
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-1">互动式适配评估</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-normal text-[#1C1917] dark:text-stone-100">探索咨询适合你吗？</h2>
+                </div>
+
+                <!-- Quiz Questions Steps -->
+                <div id="quiz-questions">
+                    <!-- Q1 -->
+                    <div id="quiz-step-0" class="space-y-4">
+                        <p class="text-base sm:text-lg font-medium text-[#1C1917] dark:text-stone-200 text-center mb-6">
+                            1. 你出现不明原因的健康症状（如疲倦、胀气、脑雾或睡眠问题）有多久了？
+                        </p>
+                        <div class="space-y-3">
+                            <button type="button" onclick="answerQuiz(event, 0, 1)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
+                                <span><strong class="text-[#B08B48] mr-2">A</strong> 近期出现（少于 3 个月）</span>
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
+                            </button>
+                            <button type="button" onclick="answerQuiz(event, 0, 2)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
+                                <span><strong class="text-[#B08B48] mr-2">B</strong> 持续一段时间（3 至 12 个月）</span>
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
+                            </button>
+                            <button type="button" onclick="answerQuiz(event, 0, 3)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
+                                <span><strong class="text-[#B08B48] mr-2">C</strong> 长期反复（超过 1 年，尽管检验结果“正常”）</span>
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div id="quiz-step-1" class="space-y-4 hidden">
+                        <p class="text-base sm:text-lg font-medium text-[#1C1917] dark:text-stone-200 text-center mb-6">
+                            2. 你寻求健康支持的主要目标是什么？
+                        </p>
+                        <div class="space-y-3">
+                            <button type="button" onclick="answerQuiz(event, 1, 1)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
+                                <span><strong class="text-[#B08B48] mr-2">A</strong> 希望快速缓解症状，或立刻得到营养补充剂建议</span>
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
+                            </button>
+                            <button type="button" onclick="answerQuiz(event, 1, 2)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
+                                <span><strong class="text-[#B08B48] mr-2">B</strong> 好奇功能性检测是如何运作的</span>
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
+                            </button>
+                            <button type="button" onclick="answerQuiz(event, 1, 3)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
+                                <span><strong class="text-[#B08B48] mr-2">C</strong> 准备好探究根本原因，并积极调整饮食／生活方式</span>
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div id="quiz-step-2" class="space-y-4 hidden">
+                        <p class="text-base sm:text-lg font-medium text-[#1C1917] dark:text-stone-200 text-center mb-6">
+                            3. 在开始任何方案之前，你是否愿意先通过一对一视频对话来梳理你的健康时间线？
+                        </p>
+                        <div class="space-y-3">
+                            <button type="button" onclick="answerQuiz(event, 2, 1)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
+                                <span><strong class="text-[#B08B48] mr-2">A</strong> 不确定，我比较喜欢只用电邮沟通</span>
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
+                            </button>
+                            <button type="button" onclick="answerQuiz(event, 2, 2)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
+                                <span><strong class="text-[#B08B48] mr-2">B</strong> 如果有助于厘清选择，我愿意通话</span>
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
+                            </button>
+                            <button type="button" onclick="answerQuiz(event, 2, 3)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
+                                <span><strong class="text-[#B08B48] mr-2">C</strong> 愿意！我想通过私人咨询评估彼此是否适合</span>
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Result State -->
+                <div id="quiz-result" class="hidden text-center space-y-6 py-4">
+                    <div class="w-16 h-16 rounded-full bg-[#F3EDE2] dark:bg-stone-800 border border-[#E8DCC8] dark:border-stone-700 text-[#B08B48] flex items-center justify-center text-3xl mx-auto">
+                        <i id="result-icon" class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div>
+                        <h3 id="result-title" class="font-serif text-2xl font-normal text-[#1C1917] dark:text-stone-100 mb-2">
+                            高度契合
+                        </h3>
+                        <p id="result-text" class="text-stone-600 dark:text-stone-300 text-sm max-w-lg mx-auto leading-relaxed">
+                            你的回答显示，一对一功能医学探索咨询非常适合你。我们会在通话中梳理你的健康时间线，并评估根源检测的选择。
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                        <a href="#" onclick="openDiscoveryModal(event)" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#B08B48] text-white font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all shadow-md">
+                            预约免费探索咨询
+                        </a>
+                        <button type="button" onclick="resetQuiz(event)" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-semibold text-xs tracking-wider uppercase hover:bg-stone-200 dark:hover:bg-stone-700 transition-all">
+                            重新评估
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DISCOVERY SESSION FAQ SECTION -->
+        <section id="faq" class="py-16 bg-[#FAF8F5] dark:bg-stone-900/40 border-t border-[#E8DCC8]/60 dark:border-stone-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-2">清楚明白</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">探索咨询常见问题</h2>
+                    <p class="text-stone-600 dark:text-stone-300 text-sm">
+                        预约免费一对一咨询前，你需要知道的一切。
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700/80 overflow-hidden shadow-xs">
+                        <button type="button" onclick="toggleFaq(event, 1)" class="w-full p-5 sm:p-6 text-left font-serif font-normal text-base sm:text-lg text-[#1C1917] dark:text-stone-100 flex items-center justify-between gap-4">
+                            <span>探索咨询需要付费或有任何义务吗？</span>
+                            <i id="faq-icon-1" class="fa-solid fa-plus text-[#B08B48] text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="faq-answer-1" class="hidden px-5 sm:px-6 pb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed border-t border-stone-100 dark:border-stone-700/60 pt-4">
+                            不需要。探索咨询完全免费，没有任何义务。它的目的，是在你投入任何费用或时间之前，先评估我们的功能性诊断营养（Functional Diagnostic Nutrition）方法是否符合你的健康目标。
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700/80 overflow-hidden shadow-xs">
+                        <button type="button" onclick="toggleFaq(event, 2)" class="w-full p-5 sm:p-6 text-left font-serif font-normal text-base sm:text-lg text-[#1C1917] dark:text-stone-100 flex items-center justify-between gap-4">
+                            <span>预约这场咨询之前，需要先做功能性检测吗？</span>
+                            <i id="faq-icon-2" class="fa-solid fa-plus text-[#B08B48] text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="faq-answer-2" class="hidden px-5 sm:px-6 pb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed border-t border-stone-100 dark:border-stone-700/60 pt-4">
+                            完全不需要。在初次探索咨询中，我们不预设任何前提，也不要求你已有检测报告。我们会回顾你的症状史、解答你的疑问，并判断未来功能性检测是否对你有帮助。
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700/80 overflow-hidden shadow-xs">
+                        <button type="button" onclick="toggleFaq(event, 3)" class="w-full p-5 sm:p-6 text-left font-serif font-normal text-base sm:text-lg text-[#1C1917] dark:text-stone-100 flex items-center justify-between gap-4">
+                            <span>一对一视频通话是如何进行的？</span>
+                            <i id="faq-icon-3" class="fa-solid fa-plus text-[#B08B48] text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="faq-answer-3" class="hidden px-5 sm:px-6 pb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed border-t border-stone-100 dark:border-stone-700/60 pt-4">
+                            所有通话都通过安全的视频链接在线上进行。无论你身在何处，都可以在家中或办公室的私密空间里轻松参加。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOKING / FINAL CALL TO ACTION -->
+        <section id="booking" class="py-16 bg-[#1C1917] text-[#FAF8F5] text-center px-4 relative overflow-hidden">
+            <div class="max-w-3xl mx-auto relative z-10">
+                <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-3">迈出下一步</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal mb-4">准备好探究你的根本原因了吗？</h2>
+                <p class="text-stone-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
+                    立即预约你的免费一对一线上探索咨询。没有压力，没有义务，只为让你清楚知道功能性调查是否适合你。
+                </p>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-[#B08B48]/40 max-w-md mx-auto text-left">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#B08B48]/20 flex items-center justify-center text-[#B08B48]">
+                            <i class="fa-solid fa-calendar-check dark:text-[#C5A880]"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm">一对一线上探索咨询</div>
+                            <div class="text-xs text-stone-300">20 分钟 • 私人视频咨询</div>
+                        </div>
+                    </div>
+                    <a href="#" onclick="openDiscoveryModal(event)" class="w-full py-3.5 rounded-xl bg-[#B08B48] text-white font-bold text-sm hover:bg-[#967233] transition-all shadow-lg text-center uppercase tracking-wider block">
+                        预约你的免费咨询
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <!-- DISCOVERY CALL REQUEST MODAL -->
+    <div id="discovery-modal" class="fixed inset-0 z-[60] bg-stone-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-xl overflow-y-auto max-h-[90vh]">
+            <button type="button" onclick="closeDiscoveryModal()" aria-label="关闭" class="absolute top-5 right-5 text-stone-400 hover:text-[#1C1917] dark:hover:text-white text-xl font-bold">&times;</button>
+            <div class="mb-5">
+                <span class="gold-label text-xs font-bold uppercase tracking-widest text-[#B08B48] block mb-1">免费一对一线上通话</span>
+                <h3 class="text-2xl font-serif font-bold text-[#1C1917] dark:text-white">申请你的探索咨询</h3>
+                <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">简单告诉我们你的情况，我们会与你联系安排时间。</p>
+            </div>
+            <form id="discovery-form" onsubmit="handleDiscoverySubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs sm:text-sm font-semibold text-[#1C1917] dark:text-stone-300 mb-1.5">1. 你最想探讨哪方面？</label>
+                    <select id="dc-focus" name="Focus Area" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none">
+                        <option>下午三点能量低谷与午后崩溃</option>
+                        <option>饭后胀气与腹胀</option>
+                        <option>脑雾与注意力低落</option>
+                        <option>凌晨三点惊醒、思绪停不下来</option>
+                        <option>顽固体重与代谢阻力</option>
+                        <option>皮肤反复发炎与成年痘痘</option>
+                        <option>其他</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs sm:text-sm font-semibold text-[#1C1917] dark:text-stone-300 mb-1.5">2. 你目前处于健康旅程的哪个阶段？</label>
+                    <select id="dc-stage" name="Journey Stage" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none">
+                        <option>刚接触功能医学</option>
+                        <option>做过一些检测，但仍在寻找答案</option>
+                        <option>目前正与其他医师／健康师合作</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs sm:text-sm font-semibold text-[#1C1917] dark:text-stone-300 mb-1.5">3. 你的姓名与电邮（用于探索咨询）</label>
+                    <input id="dc-name" type="text" name="Full Name" placeholder="你的姓名" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none mb-2.5">
+                    <input id="dc-email" type="email" name="Email" placeholder="你的电邮地址" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none">
+                </div>
+                <div id="dc-status" class="hidden text-xs text-center py-2.5 px-3 rounded-xl transition-all"></div>
+                <div class="space-y-2">
+                    <button type="button" onclick="submitDiscoveryViaWhatsApp()" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        通过 WhatsApp 申请
+                    </button>
+                    <button id="dc-submit-btn" type="submit" class="w-full py-2.5 rounded-xl bg-[#B08B48] hover:bg-[#967233] text-white font-bold text-xs uppercase tracking-wider transition-all">或通过网页表单提交</button>
+                </div>
+            </form>
+            <div id="dc-success" class="hidden text-center py-2 space-y-4">
+                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto text-xl font-bold">&#10003;</div>
+                <div>
+                    <h4 id="dc-success-title" class="text-xl font-serif font-bold text-[#1C1917] dark:text-white">申请已送出</h4>
+                    <p id="dc-success-text" class="text-xs sm:text-sm text-stone-500 dark:text-stone-300 mt-1 leading-relaxed">谢谢你。我们会尽快与你联系，安排探索咨询。</p>
+                </div>
+                <button type="button" onclick="closeDiscoveryModal(); resetDiscoveryForm();" class="px-6 py-2 rounded-full border border-stone-200 dark:border-stone-700 text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-300 hover:text-[#1C1917]">关闭窗口</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#1C1917] text-stone-400 text-xs py-10 border-t border-stone-800">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-4">
+            <div>
+                <p class="font-serif font-normal text-white text-base uppercase tracking-widest">RADICAL WELLNESS</p>
+                <p class="text-xs text-[#C5A880] font-medium mt-1">功能医学健康师 | FDNP, FBCS | Kel Liew</p>
+            </div>
+            
+            <div class="flex items-center justify-center gap-4 text-[#E5CE9F] text-xs">
+                <a href="https://kelliewfdnp.substack.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Substack 文章</a>
+                <span>•</span>
+                <a href="#" onclick="openDiscoveryModal(event)" class="hover:text-white transition-colors">探索咨询预筛</a>
+            </div>
+
+            <p class="max-w-3xl mx-auto text-[11px] text-stone-500 leading-relaxed">
+                免责声明：功能性诊断营养（Functional Diagnostic Nutrition）服务不诊断、治疗或治愈任何医学疾病。一对一探索咨询是一场教育性的预筛会谈，用于评估双方是否适合开展健康辅导服务。
+            </p>
+            <p class="text-[11px] text-stone-600">© 2026 Radical Wellness 版权所有。</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Smooth scroll handler preventing default hash jumping
+        // Keep anchor offset equal to the sticky header height so section dividers sit flush beneath it
+        function syncHeaderOffset() {
+            const hdr = document.querySelector('header.sticky');
+            if (hdr) document.documentElement.style.setProperty('--hdr-h', (hdr.getBoundingClientRect().height - 1) + 'px');
+        }
+        window.addEventListener('load', syncHeaderOffset);
+        window.addEventListener('resize', syncHeaderOffset);
+        syncHeaderOffset();
+
+        function smoothScroll(event, targetId) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Symptom Data Store for Interactive Health Decoder
+        const symptomsData = [
+            {
+                title: "下午三点能量低谷与午后崩溃",
+                simple: {
+                    desc: "你身体细胞里的“火星塞”可能正缺少矿物质的“电压”。当持续的压力或血糖下滑耗尽细胞储备，你的能量引擎就会在午餐后进入“跛行模式”。",
+                    bullets: [
+                        "了解你每天的压力节奏与用餐时间习惯",
+                        "评估是否与矿物质或血糖波动有关",
+                        "判断是否需要进行功能性代谢检测"
+                    ]
+                },
+                clinical: {
+                    desc: "我们会筛查 HPA 轴功能失调、夜间皮质醇节律失衡以及细胞线粒体负荷，评估是否有必要进行功能性代谢分析（HTMA／有机酸检测）。",
+                    bullets: [
+                        "评估 HPA 轴压力反应曲线与血糖变异性",
+                        "梳理细胞能量生成的瓶颈与有机酸标志物",
+                        "判断是否需要针对性的矿物质与线粒体支持"
+                    ]
+                }
+            },
+            {
+                title: "饭后胀气与腹胀",
+                simple: {
+                    desc: "你的消化“花园”可能失去了平衡。当胃酸或消化力下降，未被妥善消化的食物会在肠道里发酵，带来不适与胀气。",
+                    bullets: [
+                        "评估你的消化症状与食物反应史",
+                        "区分上消化道与下消化道的功能失衡",
+                        "确认是否适合进行全面的粪便／微生物群筛查"
+                    ]
+                },
+                clinical: {
+                    desc: "我们会筛查肠道菌群失调、胃酸（HCl）不足以及黏膜屏障通透性，以确定是否需要进行 GI-MAP 微生物测序。",
+                    bullets: [
+                        "区分上消化道胃酸不足与结肠菌群失调",
+                        "评估炎症生物标志物（钙卫蛋白、分泌型 IgA）",
+                        "判断是否适合进行全面的粪便与病原体分析"
+                    ]
+                }
+            },
+            {
+                title: "脑雾与注意力低落",
+                simple: {
+                    desc: "当体内的“过滤通道”（如肠道或肝脏）堵塞时，代谢的背景噪音会不断累积，拖慢大脑的处理速度与清晰度。",
+                    bullets: [
+                        "回顾肠脑轴线索与认知能量低谷",
+                        "梳理肝脏清除路径与每日毒素负荷",
+                        "评估有机酸检测能否找出线粒体瓶颈"
+                    ]
+                },
+                clinical: {
+                    desc: "我们会评估神经炎症信号、肠脑轴的相互作用以及全身排毒清除路径。",
+                    bullets: [
+                        "调查源自肠道的神经毒素与血脑屏障压力",
+                        "检视肝脏第一、二相解毒路径的负荷",
+                        "判断是否需要进行尿液神经递质代谢物筛查"
+                    ]
+                }
+            },
+            {
+                title: "凌晨三点惊醒、思绪停不下来",
+                simple: {
+                    desc: "你的夜间“油箱”可能在睡到一半时见底，促使肾上腺释放应急肾上腺素来为大脑供能，让你瞬间清醒。",
+                    bullets: [
+                        "评估晚间饮食习惯与睡眠作息",
+                        "分析昼夜皮质醇节律的线索",
+                        "判断唾液／尿液激素检测是否有帮助"
+                    ]
+                },
+                clinical: {
+                    desc: "我们会调查夜间低血糖应激反应、午夜皮质醇异常飙升，以及孕酮／雌激素的平衡。",
+                    bullets: [
+                        "筛查夜间肝糖原耗竭与肾上腺素激增",
+                        "分析四点式昼夜皮质醇与褪黑激素曲线",
+                        "确认是否需要以 DUTCH 激素检测来了解睡眠结构"
+                    ]
+                }
+            },
+            {
+                title: "顽固体重与代谢阻力",
+                simple: {
+                    desc: "当慢性压力信号持续存在，身体会误以为处于紧急状态，为求生存而紧抓能量储备，即使限制热量，代谢率也会随之放慢。",
+                    bullets: [
+                        "找出阻碍减重的隐藏生理压力源",
+                        "探讨甲状腺与肾上腺压力相互作用的时间线",
+                        "确认是否需要功能性检测来突破停滞期"
+                    ]
+                },
+                clinical: {
+                    desc: "我们会评估甲状腺—肾上腺反馈回路失调、反式 T3（reverse T3）清除，以及迫使代谢保守的全身性细胞危险反应。",
+                    bullets: [
+                        "找出锁住代谢率的非热量类生理压力源",
+                        "分析皮质醇与甲状腺激素转化的反馈回路",
+                        "评估代谢相关检测项目以突破阻力"
+                    ]
+                }
+            },
+            {
+                title: "皮肤反复发炎与成年痘痘",
+                simple: {
+                    desc: "皮肤常常扮演“第二条排泄通道”。当体内的排毒路径（肠道或肝脏）堵塞，溢出的负担就可能以发炎、长痘和顽固刺激的形式浮现。",
+                    bullets: [
+                        "评估皮肤问题背后的肝脏与肠道健康史",
+                        "找出可能的饮食敏感或激素关联",
+                        "决定是否有必要进行根源性功能检测"
+                    ]
+                },
+                clinical: {
+                    desc: "我们会评估肝脏相关的雌激素代谢菌群（estrobolome）活性、肠—皮肤轴菌群失调，以及第二相结合反应效率。",
+                    bullets: [
+                        "筛查肠道微生物群对激素再循环酶的影响",
+                        "检视肝脏对循环代谢物的清除效率",
+                        "判断是否需要进行功能性食物敏感检测"
+                    ]
+                }
+            }
+        ];
+
+        let currentPerspectiveMode = 'simple'; // 'simple' or 'clinical'
+        let currentSymptomIndex = 0;
+        let quizAnswers = [0, 0, 0];
+
+        // Mode Switcher (Simple Analogy vs Clinical Concept)
+        function togglePerspectiveMode(event) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            currentPerspectiveMode = currentPerspectiveMode === 'simple' ? 'clinical' : 'simple';
+            
+            const btnLabels = document.querySelectorAll('.mode-label');
+            const heroTag = document.getElementById('hero-card-tag');
+            const heroText = document.getElementById('hero-card-text');
+
+            if (currentPerspectiveMode === 'simple') {
+                btnLabels.forEach(l => l.textContent = '通俗版');
+                heroTag.innerHTML = `<i class="fa-solid fa-compass"></i> 视角：通俗比喻`;
+                heroText.textContent = `在决定进行复杂检测或大幅调整生活方式之前，这场初次探索咨询是我们彼此认识的起点。在这通免费的一对一视频通话中，我们会梳理你的健康时间线，倾听你的身体一路经历了什么，并评估功能医学调查是否真正适合你的目标。`;
+            } else {
+                btnLabels.forEach(l => l.textContent = '临床版');
+                heroTag.innerHTML = `<i class="fa-solid fa-microscope"></i> 视角：临床概念`;
+                heroText.textContent = `探索咨询是一场初步的 FDN 分诊通话。我们会分析代谢负荷、系统反馈回路与症状持续时间，以判断是否需要进行全面的功能性诊断检测（DUTCH、GI-MAP）。`;
+            }
+
+            selectSymptom(null, currentSymptomIndex);
+            updateModeMenu();
+        }
+
+        // Theme Toggle (Light / Dark)
+        function toggleTheme(event) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.className = 'fa-solid fa-moon text-lg';
+            } else {
+                html.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-sun text-lg text-[#F0DDB0]';
+            }
+        }
+
+        // Select Symptom in Health Decoder
+        function selectSymptom(event, index) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            currentSymptomIndex = index;
+            const data = symptomsData[index];
+            const content = data[currentPerspectiveMode];
+
+            // Clean button state swap using explicit class strings to prevent class conflicts
+            const buttons = document.querySelectorAll('.symptom-item-btn');
+            buttons.forEach((btn, idx) => {
+                const isActive = idx === index;
+                if (isActive) {
+                    btn.className = 'symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 is-active bg-[#EDE5D4] text-[#1C1917] border-[#C5A880] font-semibold dark:bg-[#B08B48] dark:text-white dark:border-[#B08B48] shadow-md flex items-center justify-between';
+                } else {
+                    btn.className = 'symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between';
+                }
+            });
+
+            // Update content directly
+            document.getElementById('symptom-title').textContent = data.title;
+            document.getElementById('perspective-tag').textContent = currentPerspectiveMode === 'simple' ? '通俗比喻' : '临床概念';
+            document.getElementById('symptom-description').textContent = content.desc;
+
+            const bulletsContainer = document.getElementById('symptom-bullets');
+            bulletsContainer.innerHTML = content.bullets.map(bullet => `
+                <li class="flex items-start gap-2.5">
+                    <span class="text-[#B08B48] dark:text-[#C5A880] font-bold">•</span>
+                    <span>${bullet}</span>
+                </li>
+            `).join('');
+        }
+
+        // Readiness Quiz Logic
+        function answerQuiz(event, step, score) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            quizAnswers[step] = score;
+
+            if (step < 2) {
+                document.getElementById(`quiz-step-${step}`).classList.add('hidden');
+                document.getElementById(`quiz-step-${step + 1}`).classList.remove('hidden');
+                
+                const nextStepNum = step + 2;
+                const progressPct = Math.round((nextStepNum / 3) * 100);
+                document.getElementById('quiz-step-indicator').textContent = `第 ${nextStepNum} 步 / 共 3 步`;
+                document.getElementById('quiz-progress-text').textContent = `已完成 ${progressPct}%`;
+                document.getElementById('quiz-progress-bar').style.width = `${progressPct}%`;
+            } else {
+                // Show Result State
+                document.getElementById('quiz-questions').classList.add('hidden');
+                document.getElementById('quiz-result').classList.remove('hidden');
+                
+                const totalScore = quizAnswers.reduce((a, b) => a + b, 0);
+                const resultTitle = document.getElementById('result-title');
+                const resultText = document.getElementById('result-text');
+                const resultIcon = document.getElementById('result-icon');
+
+                if (totalScore >= 7) {
+                    resultTitle.textContent = "高度契合";
+                    resultText.textContent = "你的回答显示，一对一功能医学探索咨询非常适合你。我们会在通话中梳理你的健康时间线，并评估根源检测的选择。";
+                    resultIcon.className = "fa-solid fa-circle-check text-[#B08B48]";
+                } else if (totalScore >= 5) {
+                    resultTitle.textContent = "很有潜力";
+                    resultText.textContent = "探索咨询对你可能大有帮助。在咨询中，我们会厘清功能性调查与常规做法的差异，让你能做出明智的选择。";
+                    resultIcon.className = "fa-solid fa-compass text-[#B08B48]";
+                } else {
+                    resultTitle.textContent = "建议先做了解型咨询";
+                    resultText.textContent = "探索咨询将帮助你了解功能医学的原理，让你判断探究根本原因是否符合你的个人目标。";
+                    resultIcon.className = "fa-solid fa-book-open text-[#B08B48]";
+                }
+
+                document.getElementById('quiz-step-indicator').textContent = `评估完成`;
+                document.getElementById('quiz-progress-text').textContent = `已完成 100%`;
+                document.getElementById('quiz-progress-bar').style.width = `100%`;
+            }
+        }
+
+        function resetQuiz(event) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            quizAnswers = [0, 0, 0];
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-questions').classList.remove('hidden');
+            
+            for (let i = 0; i < 3; i++) {
+                const el = document.getElementById(`quiz-step-${i}`);
+                if (i === 0) el.classList.remove('hidden');
+                else el.classList.add('hidden');
+            }
+
+            document.getElementById('quiz-step-indicator').textContent = `第 1 步 / 共 3 步`;
+            document.getElementById('quiz-progress-text').textContent = `已完成 33%`;
+            document.getElementById('quiz-progress-bar').style.width = `33%`;
+        }
+
+        // FAQ Expand / Collapse
+        function toggleFaq(event, id) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            const answer = document.getElementById(`faq-answer-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.className = 'fa-solid fa-minus text-[#B08B48] text-sm transition-transform duration-200';
+            } else {
+                answer.classList.add('hidden');
+                icon.className = 'fa-solid fa-plus text-[#B08B48] text-sm transition-transform duration-200';
+            }
+        }
+
+        // Schedule Notification Box
+        function handleBookingClick(event) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            const msgBox = document.createElement('div');
+            msgBox.className = 'fixed bottom-6 right-6 bg-[#1C1917] text-[#FAF8F5] px-6 py-4 rounded-xl shadow-xl z-50 border border-[#B08B48] text-sm flex items-center gap-3 animate-bounce';
+            msgBox.innerHTML = `<i class="fa-solid fa-calendar-check text-[#B08B48] text-lg"></i> <span>正在跳转至日程预约…</span>`;
+            document.body.appendChild(msgBox);
+            setTimeout(() => {
+                msgBox.remove();
+            }, 3000);
+        }
+    
+        // ---- Discovery Call request: WhatsApp + FormSubmit (same setup as The Inner Circle readiness check) ----
+        const WHATSAPP_NUMBER = "6596449966";
+        const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/kellwx@gmail.com";
+
+        function openDiscoveryModal(e) {
+            if (e) e.preventDefault();
+            const m = document.getElementById('discovery-modal');
+            m.classList.remove('hidden'); m.classList.add('flex');
+        }
+        function closeDiscoveryModal() {
+            const m = document.getElementById('discovery-modal');
+            m.classList.add('hidden'); m.classList.remove('flex');
+        }
+        function dcStatus(msg, warn) {
+            const s = document.getElementById('dc-status');
+            s.className = 'text-xs text-center py-2.5 px-3 rounded-xl font-medium block ' + (warn
+                ? 'bg-amber-500/10 border border-amber-500/30 text-amber-800 dark:text-amber-300'
+                : 'bg-stone-100 dark:bg-stone-800 text-stone-500');
+            s.innerText = msg;
+        }
+        function dcShowSuccess(title, text) {
+            document.getElementById('dc-success-title').innerText = title;
+            document.getElementById('dc-success-text').innerText = text;
+            document.getElementById('discovery-form').classList.add('hidden');
+            document.getElementById('dc-success').classList.remove('hidden');
+        }
+        function submitDiscoveryViaWhatsApp() {
+            const focus = document.getElementById('dc-focus').value;
+            const stage = document.getElementById('dc-stage').value;
+            const name = document.getElementById('dc-name').value.trim();
+            const email = document.getElementById('dc-email').value.trim();
+            if (!name || !email) { dcStatus('\u26A0\uFE0F 请先填写姓名与电邮。', true); return; }
+            const msg = `你好 Kel，我想预约免费的 *一对一探索咨询*。\n\n` +
+                `*姓名：* ${name}\n*电邮：* ${email}\n*关注方向：* ${focus}\n*健康旅程阶段：* ${stage}`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(msg)}`, '_blank');
+            dcShowSuccess('申请已备妥', '你的资料已整理完毕。请在 WhatsApp 中完成发送，即可与 Kel 直接联系。');
+        }
+        async function handleDiscoverySubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('dc-submit-btn');
+            const name = document.getElementById('dc-name').value;
+            btn.disabled = true; btn.innerText = '正在处理申请…';
+            dcStatus('正在发送申请详情…', false);
+            try {
+                const res = await fetch(FORMSUBMIT_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        'Applicant Name': name,
+                        'Applicant Email': document.getElementById('dc-email').value,
+                        'Focus Area': document.getElementById('dc-focus').value,
+                        'Journey Stage': document.getElementById('dc-stage').value,
+                        _subject: `新的探索咨询申请：${name}`,
+                        _captcha: 'false'
+                    })
+                });
+                if (!res.ok) throw new Error('Request failed');
+                dcShowSuccess('申请已送出', '谢谢你。我们会尽快与你联系，安排探索咨询。');
+            } catch (err) {
+                btn.disabled = false; btn.innerText = '或通过网页表单提交';
+                dcStatus('无法发送网页表单，请改用 WhatsApp 申请按钮。', true);
+            }
+        }
+        function resetDiscoveryForm() {
+            const f = document.getElementById('discovery-form');
+            f.reset(); f.classList.remove('hidden');
+            document.getElementById('dc-success').classList.add('hidden');
+            const b = document.getElementById('dc-submit-btn'); b.disabled = false; b.innerText = '或通过网页表单提交';
+            document.getElementById('dc-status').className = 'hidden';
+        }
+        document.addEventListener('keydown', ev => { if (ev.key === 'Escape') closeDiscoveryModal(); });
+        document.getElementById('discovery-modal').addEventListener('click', ev => { if (ev.target.id === 'discovery-modal') closeDiscoveryModal(); });
+    
+        // ---- Mobile dropdown menu ----
+        function toggleMobileMenu(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden', !open);
+            document.getElementById('menu-icon').className = 'fa-solid ' + (open ? 'fa-xmark' : 'fa-bars') + ' text-base';
+            const b = document.getElementById('mobile-menu-btn');
+            b.setAttribute('aria-expanded', open ? 'true' : 'false');
+            b.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单');
+            syncHeaderOffset();
+        }
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) return;
+            menu.classList.add('hidden');
+            document.getElementById('menu-icon').className = 'fa-solid fa-bars text-base';
+            const b = document.getElementById('mobile-menu-btn');
+            b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', '打开菜单');
+            syncHeaderOffset();
+        }
+        window.addEventListener('resize', () => { if (window.innerWidth >= 1024) closeMobileMenu(); });
+        document.addEventListener('keydown', ev => { if (ev.key === 'Escape') closeMobileMenu(); });
+    
+        // ---- Simple / Clinical dropdown ----
+        function updateModeMenu() {
+            document.querySelectorAll('.mode-opt').forEach(b => {
+                const on = b.dataset.mode === currentPerspectiveMode;
+                b.querySelector('.mode-check').style.visibility = on ? 'visible' : 'hidden';
+                b.classList.toggle('font-semibold', on);
+            });
+        }
+        function toggleModeMenu(e) {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
+            const m = document.getElementById('mode-menu');
+            const open = m.classList.contains('hidden');
+            m.classList.toggle('hidden', !open);
+            document.getElementById('mode-menu-btn').setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+        function closeModeMenu() {
+            document.getElementById('mode-menu').classList.add('hidden');
+            document.getElementById('mode-menu-btn').setAttribute('aria-expanded', 'false');
+        }
+        function setPerspectiveMode(mode) {
+            if (mode !== currentPerspectiveMode) togglePerspectiveMode();
+            updateModeMenu();
+            closeModeMenu();
+        }
+        document.addEventListener('click', ev => { if (!ev.target.closest('#mode-menu') && !ev.target.closest('#mode-menu-btn')) closeModeMenu(); });
+        document.addEventListener('keydown', ev => { if (ev.key === 'Escape') closeModeMenu(); });
+        updateModeMenu();
+    </script>
+</body>
+</html>
