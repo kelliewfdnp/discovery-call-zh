@@ -2,8 +2,15 @@
 <html lang="zh-Hans" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <script>
+    /* Hide the page until Tailwind + fonts are ready, so nothing animates or jumps while loading */
+    (function(){var d=document.documentElement,done=false;d.classList.add('preload');
+    function go(){if(done)return;done=true;requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.remove('preload');});});}
+    window.addEventListener('load',function(){var f=document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve();f.then(function(){setTimeout(go,60);});});
+    setTimeout(go,3000);})();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Radical Wellness - 功能医学探索咨询</title>
+    <title>Radical Wellness - 功能医学初步沟通</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script>
@@ -81,6 +88,11 @@ button,a{-webkit-tap-highlight-color:transparent}
 
         html{scroll-padding-top:var(--hdr-h,80px)}
         h1,h2,h3{text-wrap:balance}
+        h1{line-height:1.3!important;padding-bottom:.1em}
+        h2{line-height:1.4!important}
+        html.preload body{opacity:0}
+        html.preload *,html.preload *::before,html.preload *::after{transition:none!important}
+        body{transition:opacity .25s ease}
         body{line-break:strict}
         header.sticky{padding-top:env(safe-area-inset-top,0px)}
         .gradient-text {
@@ -110,7 +122,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                     <!-- Reduced font size by 2 sizes: text-sm sm:text-base -->
                     <span class="font-serif text-sm sm:text-base font-semibold tracking-widest text-[#1C1917] dark:text-[#FAF8F5] uppercase block leading-tight">RADICAL WELLNESS</span>
                     <!-- Reduced font size by 2 sizes: text-[10px] sm:text-[11px] -->
-                    <span class="gold-label text-[10px] sm:text-[11px] font-medium tracking-widest text-[#B08B48] uppercase block">功能医学探索咨询</span>
+                    <span class="gold-label text-[10px] sm:text-[11px] font-medium tracking-widest text-[#B08B48] uppercase block">功能医学初步沟通</span>
                 </div>
             </a>
 
@@ -186,13 +198,13 @@ button,a{-webkit-tap-highlight-color:transparent}
             <div class="gold-label inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3EDE2] dark:bg-stone-800/80 text-[#B08B48] text-xs font-semibold uppercase tracking-wider mb-8 border border-[#E8DCC8] dark:border-stone-700">
                 <span class="relative flex h-[8px] w-[8px] shrink-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" style="animation-duration:1.25s"></span><span class="relative inline-flex h-[8px] w-[8px] rounded-full bg-emerald-500"></span></span>
                 <i class="fa-solid fa-video text-[#B08B48]"></i>
-                <span>一对一私人线上探索咨询</span>
+                <span>一对一私人线上初步沟通</span>
             </div>
             
             <!-- Headline revised: Highlight only "Root-Cause" -->
             <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-[#1C1917] dark:text-stone-100 leading-[1.3] max-w-4xl mx-auto">
-                看看功能医学的<span class="hero-accent-text font-serif not-italic text-[#9B1B30] font-normal">根源调查</span><br>
-                是否适合你。
+                看看功能医学<span class="hero-accent-text font-serif not-italic text-[#9B1B30] font-normal">根源排查</span><br>
+                是否适合您。
             </h1>
 
             <!-- Dynamic Hero Perspective Box -->
@@ -205,14 +217,14 @@ button,a{-webkit-tap-highlight-color:transparent}
                     <span class="text-stone-400 dark:text-stone-500 text-[11px] hidden sm:inline">右上角切换模式</span>
                 </div>
                 <p id="hero-card-text" class="text-stone-600 dark:text-stone-300 text-sm sm:text-base leading-relaxed font-sans">
-                    在决定进行复杂检测或大幅调整生活方式之前，这场初次探索咨询是我们彼此认识的起点。在这通免费的一对一视频通话中，我们会梳理你的健康时间线，倾听你的身体一路经历了什么，并评估功能医学调查是否真正适合你的目标。
+                    在决定进行复杂检测或大幅调整生活方式之前，这场初次沟通是我们彼此认识的起点。在这通免费的一对一视频通话中，我们会梳理您的健康历程，倾听您的身体一路经历了什么，并看看功能医学调查是否真正适合您的目标。
                 </p>
             </div>
 
             <!-- Hero Action Buttons -->
             <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#" onclick="openDiscoveryModal(event)" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#B08B48] text-white font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all shadow-md flex items-center justify-center gap-2">
-                    <span>申请探索咨询</span>
+                    <span>申请初步沟通</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </a>
                 <a href="#decoder" onclick="smoothScroll(event, 'decoder')" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 font-semibold text-xs tracking-wider uppercase hover:bg-stone-50 dark:hover:bg-stone-700 transition-all shadow-xs flex items-center justify-center gap-2">
@@ -243,7 +255,7 @@ button,a{-webkit-tap-highlight-color:transparent}
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-4xl mx-auto mb-12">
                     <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-2">必经的第一步</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">为什么要从探索咨询开始？</h2>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">为什么要从初步沟通开始？</h2>
                     <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base">
                         我们不推销标准化套餐。我们会先评估，确认我们的团队是否适合为您提供帮助。
                     </p>
@@ -258,7 +270,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                             </div>
                             <h3 class="font-serif text-xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">仓促治标、掩盖症状</h3>
                             <p class="text-stone-600 dark:text-stone-300 text-sm leading-relaxed mb-6">
-                                常规诊疗往往直接开具快速对症药物，或仅凭标准化实验室指标正常，就判定慢性不适症状无异常，忽略个体独特的健康历程与生活方式背景，无法溯源病因。
+                                常规诊疗往往直接开具快速对症药物，或仅凭标准化实验室指标正常，就判定慢性不适症状无异常，忽略个体独特的健康历程与生活方式背景，无法查找问题根源。
                             </p>
                             <ul class="space-y-3 text-sm text-stone-600 dark:text-stone-300">
                                 <li class="flex items-start gap-2.5">
@@ -282,11 +294,11 @@ button,a{-webkit-tap-highlight-color:transparent}
                         <div>
                             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F3EDE2] dark:bg-stone-700 text-[#1C1917] dark:text-[#C5A880] text-xs font-semibold mb-4">
                                 <i class="fa-solid fa-star text-[#B08B48] dark:text-[#C5A880]"></i>
-                                <span>探索咨询</span>
+                                <span>初步沟通</span>
                             </div>
-                            <h3 class="font-serif text-xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">双向适配与契合沟通</h3>
+                            <h3 class="font-serif text-xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">双向匹配，充分沟通</h3>
                             <p class="text-stone-600 dark:text-stone-300 text-sm leading-relaxed mb-6">
-                                一场专注的一对一对话：我们会梳理你的症状时间线，了解你已经尝试过的方法，并厘清我们的 FDNP 功能医学方法是否符合你的身体恢复所需。
+                                一场专注的一对一对话：我们会梳理您的症状时间线，了解您已经尝试过的方法，并判断这套功能性诊断营养（FDN）的功能医学调理方案是否适合您的身体康复需求。
                             </p>
                             <ul class="space-y-3 text-sm text-stone-700 dark:text-stone-300">
                                 <li class="flex items-start gap-2.5">
@@ -305,7 +317,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                         </div>
                         <div class="mt-8 pt-6 border-t border-stone-100 dark:border-stone-700">
                             <a href="#" onclick="openDiscoveryModal(event)" class="w-full py-3 rounded-xl bg-[#B08B48] text-white font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all flex items-center justify-center gap-2">
-                                <span>预约免费探索咨询</span>
+                                <span>预约免费初步沟通</span>
                                 <i class="fa-solid fa-chevron-right text-[11px]"></i>
                             </a>
                         </div>
@@ -318,9 +330,9 @@ button,a{-webkit-tap-highlight-color:transparent}
         <section id="decoder" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto mb-12">
                 <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-2">互动式健康解码器</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-4">你的身体想告诉你什么？</h2>
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-4">您的身体想告诉您什么？</h2>
                 <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base leading-relaxed">
-                    请选择你最关注的方面，开启私人探索咨询之旅，一起判断功能医学如何提升你的整体健康。
+                    请选择您最关注的方面，开启私人初步沟通之旅，一起判断功能医学如何提升您的整体健康。
                 </p>
             </div>
 
@@ -328,27 +340,27 @@ button,a{-webkit-tap-highlight-color:transparent}
                 <!-- Left Vertical Selection List -->
                 <div class="lg:col-span-5 lg:self-center space-y-3" id="symptom-list">
                     <button type="button" onclick="selectSymptom(event, 0)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 is-active bg-[#EDE5D4] text-[#1C1917] border-[#C5A880] font-semibold dark:bg-[#B08B48] dark:text-white dark:border-[#B08B48] shadow-md flex items-center justify-between" data-index="0">
-                        <span class="font-medium text-sm">下午三点精力低谷、午后疲乏虚脱</span>
+                        <span class="font-medium text-sm">下午三点容易犯困、午后疲惫乏力</span>
                         <i class="fa-solid fa-chevron-right text-xs"></i>
                     </button>
                     <button type="button" onclick="selectSymptom(event, 1)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="1">
-                        <span class="font-medium text-sm">餐后腹胀膨隆</span>
+                        <span class="font-medium text-sm">餐后腹胀</span>
                         <i class="fa-solid fa-chevron-right text-xs"></i>
                     </button>
                     <button type="button" onclick="selectSymptom(event, 2)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="2">
-                        <span class="font-medium text-sm">脑雾 · 专注力衰退</span>
+                        <span class="font-medium text-sm">脑子发懵、注意力下降</span>
                         <i class="fa-solid fa-chevron-right text-xs"></i>
                     </button>
                     <button type="button" onclick="selectSymptom(event, 3)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="3">
-                        <span class="font-medium text-sm">凌晨三点易醒、思绪纷乱</span>
+                        <span class="font-medium text-sm">凌晨3点容易醒、思绪停不下来</span>
                         <i class="fa-solid fa-chevron-right text-xs"></i>
                     </button>
                     <button type="button" onclick="selectSymptom(event, 4)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="4">
-                        <span class="font-medium text-sm">减重困难与代谢抵抗</span>
+                        <span class="font-medium text-sm">很难减重、代谢调节差</span>
                         <i class="fa-solid fa-chevron-right text-xs"></i>
                     </button>
                     <button type="button" onclick="selectSymptom(event, 5)" class="symptom-item-btn w-full px-6 py-4 rounded-full border-2 text-left transition-colors duration-150 bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-[#1C1917] dark:text-stone-200 hover:border-[#B08B48] flex items-center justify-between" data-index="5">
-                        <span class="font-medium text-sm">皮肤反复发炎、成人痘</span>
+                        <span class="font-medium text-sm">皮肤反复发炎、反复长成人痘</span>
                         <i class="fa-solid fa-chevron-right text-xs"></i>
                     </button>
                 </div>
@@ -364,21 +376,21 @@ button,a{-webkit-tap-highlight-color:transparent}
                         </div>
 
                         <h3 id="symptom-title" class="font-serif text-2xl font-normal text-[#1C1917] dark:text-stone-100 mb-4">
-                            下午三点精力低谷、午后疲乏虚脱
+                            下午三点容易犯困、午后疲惫乏力
                         </h3>
 
                         <p id="symptom-description" class="symptom-desc text-stone-600 dark:text-stone-300 text-sm leading-relaxed mb-6">
-                            身体细胞的“动力火花塞”可能正缺乏矿物质供能。持续压力或血糖下滑耗尽细胞储备后，你的能量引擎会在午饭后直接进入乏力怠机状态。
+                            身体细胞的“动力火花塞”可能正缺乏矿物质供能。持续压力或血糖下滑耗尽细胞储备后，您的能量引擎会在午饭后直接进入乏力待机状态。
                         </p>
 
                         <div class="bg-[#FAF8F5] dark:bg-stone-800/60 rounded-xl p-5 border border-[#E8DCC8]/60 dark:border-stone-700/60">
                             <h4 class="text-xs font-medium uppercase tracking-wider text-[#1C1917] dark:text-[#C5A880] mb-3">
-                                在免费探索咨询中，我们会探讨：
+                                在免费初步沟通中，我们会探讨：
                             </h4>
                             <ul id="symptom-bullets" class="space-y-2.5 text-xs sm:text-sm text-stone-700 dark:text-stone-300">
                                 <li class="flex items-start gap-2.5">
                                     <span class="text-[#B08B48] dark:text-[#C5A880] font-bold">•</span>
-                                    <span>分析你的日常压力节律与进餐时间习惯</span>
+                                    <span>分析您的日常压力节律与进餐时间习惯</span>
                                 </li>
                                 <li class="flex items-start gap-2.5">
                                     <span class="text-[#B08B48] dark:text-[#C5A880] font-bold">•</span>
@@ -394,7 +406,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
                     <div class="mt-8 pt-4 border-t border-stone-100 dark:border-stone-800">
                         <a href="#" onclick="openDiscoveryModal(event)" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#B08B48] text-white font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all shadow-sm gap-2">
-                            <span>免费通话，聊聊你的症状</span>
+                            <span>免费通话，聊聊您的症状</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
@@ -407,9 +419,9 @@ button,a{-webkit-tap-highlight-color:transparent}
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-2">功能医学框架</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">若合作，我们会评估的系统</h2>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">若合作，我们会了解的系统</h2>
                     <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base">
-                        在初次探索咨询中，我们会评估这套“三大支柱”功能性调查是否符合你身体的需要。
+                        在初次沟通中，我们会看看这套“三大支柱”功能性调查是否符合您身体的需要。
                     </p>
                 </div>
 
@@ -420,10 +432,10 @@ button,a{-webkit-tap-highlight-color:transparent}
                             <div class="w-10 h-10 rounded-xl bg-[#F3EDE2] dark:bg-stone-700 flex items-center justify-center text-[#B08B48] mb-4">
                                 <i class="fa-solid fa-bolt text-base"></i>
                             </div>
-                            <h3 class="font-serif text-lg font-normal text-[#1C1917] dark:text-stone-100 mb-1">代谢生物能量</h3>
+                            <h3 class="font-serif text-lg font-normal text-[#1C1917] dark:text-stone-100 mb-1">生物能量与代谢</h3>
                             <span class="gold-label text-[11px] font-medium tracking-widest uppercase text-[#B08B48] block mb-3">细胞与神经递质概况</span>
                             <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mb-4">
-                                评估你的细胞产生能量、处理营养、清除代谢废物以及平衡神经化学信号通路的效率。
+                                评估细胞生成能量、代谢营养、排出代谢废物，以及调节神经化学信号的运作效率。
                             </p>
                         </div>
                         <div class="pt-4 border-t border-stone-100 dark:border-stone-700 text-xs">
@@ -456,10 +468,10 @@ button,a{-webkit-tap-highlight-color:transparent}
                             <div class="w-10 h-10 rounded-xl bg-[#F3EDE2] dark:bg-stone-700 flex items-center justify-center text-[#B08B48] mb-4">
                                 <i class="fa-solid fa-sliders text-base"></i>
                             </div>
-                            <h3 class="font-serif text-lg font-normal text-[#1C1917] dark:text-stone-100 mb-1">激素清除</h3>
-                            <span class="gold-label text-[11px] font-medium tracking-widest uppercase text-[#B08B48] block mb-3">内分泌与肾上腺曲线</span>
+                            <h3 class="font-serif text-lg font-normal text-[#1C1917] dark:text-stone-100 mb-1">激素代谢</h3>
+                            <span class="gold-label text-[11px] font-medium tracking-widest uppercase text-[#B08B48] block mb-3">内分泌与肾上腺节律</span>
                             <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mb-4">
-                                不只看表面的激素水平，更评估昼夜压力曲线（皮质醇／褪黑激素）以及肝脏每日清除激素的效率。
+                                不只看表面的激素水平，更要看昼夜压力曲线（皮质醇／褪黑激素）以及肝脏每日清除激素的效率。
                             </p>
                         </div>
                         <div class="pt-4 border-t border-stone-100 dark:border-stone-700 text-xs">
@@ -486,7 +498,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
                 <div class="text-center max-w-2xl mx-auto mb-8">
                     <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-1">互动式适配评估</span>
-                    <h2 class="font-serif text-2xl sm:text-3xl font-normal text-[#1C1917] dark:text-stone-100">探索咨询适合你吗？</h2>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-normal text-[#1C1917] dark:text-stone-100">初步沟通适合您吗？</h2>
                 </div>
 
                 <!-- Quiz Questions Steps -->
@@ -494,7 +506,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                     <!-- Q1 -->
                     <div id="quiz-step-0" class="space-y-4">
                         <p class="text-base sm:text-lg font-medium text-[#1C1917] dark:text-stone-200 text-center mb-6">
-                            1. 你出现不明原因的健康症状（如疲倦、胀气、脑雾或睡眠问题）有多久了？
+                            1. 您出现不明原因的健康症状（如疲倦、胀气、脑雾或睡眠问题）有多久了？
                         </p>
                         <div class="space-y-3">
                             <button type="button" onclick="answerQuiz(event, 0, 1)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
@@ -515,7 +527,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                     <!-- Q2 -->
                     <div id="quiz-step-1" class="space-y-4 hidden">
                         <p class="text-base sm:text-lg font-medium text-[#1C1917] dark:text-stone-200 text-center mb-6">
-                            2. 你寻求健康支持的主要目标是什么？
+                            2. 您寻求健康支持的主要目标是什么？
                         </p>
                         <div class="space-y-3">
                             <button type="button" onclick="answerQuiz(event, 1, 1)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
@@ -536,7 +548,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                     <!-- Q3 -->
                     <div id="quiz-step-2" class="space-y-4 hidden">
                         <p class="text-base sm:text-lg font-medium text-[#1C1917] dark:text-stone-200 text-center mb-6">
-                            3. 在开始任何方案之前，你是否愿意先通过一对一视频对话来梳理你的健康时间线？
+                            3. 在开始任何方案之前，您是否愿意先通过一对一视频对话来梳理您的健康历程？
                         </p>
                         <div class="space-y-3">
                             <button type="button" onclick="answerQuiz(event, 2, 1)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
@@ -548,7 +560,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                                 <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
                             </button>
                             <button type="button" onclick="answerQuiz(event, 2, 3)" class="w-full p-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#B08B48] dark:hover:border-[#B08B48] bg-stone-50/50 dark:bg-stone-800/50 text-left text-sm font-medium transition-all flex items-center justify-between group">
-                                <span><strong class="text-[#B08B48] mr-2">C</strong> 愿意！我想通过私人咨询评估彼此是否适合</span>
+                                <span><strong class="text-[#B08B48] mr-2">C</strong> 愿意！我想通过私人咨询了解彼此是否适合</span>
                                 <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 text-[#B08B48] transition-opacity"></i>
                             </button>
                         </div>
@@ -565,12 +577,12 @@ button,a{-webkit-tap-highlight-color:transparent}
                             高度契合
                         </h3>
                         <p id="result-text" class="text-stone-600 dark:text-stone-300 text-sm max-w-lg mx-auto leading-relaxed">
-                            你的回答显示，一对一功能医学探索咨询非常适合你。我们会在通话中梳理你的健康时间线，并评估根源检测的选择。
+                            您的回答显示，一对一功能医学初步沟通非常适合您。我们会在通话中梳理您的健康历程，并了解根源检测有哪些选择。
                         </p>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                         <a href="#" onclick="openDiscoveryModal(event)" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#B08B48] text-white font-semibold text-xs tracking-wider uppercase hover:bg-[#967233] transition-all shadow-md">
-                            预约免费探索咨询
+                            预约免费初步沟通
                         </a>
                         <button type="button" onclick="resetQuiz(event)" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-semibold text-xs tracking-wider uppercase hover:bg-stone-200 dark:hover:bg-stone-700 transition-all">
                             重新评估
@@ -586,9 +598,9 @@ button,a{-webkit-tap-highlight-color:transparent}
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-2xl mx-auto mb-12">
                     <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-2">清楚明白</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">探索咨询常见问题</h2>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-[#1C1917] dark:text-stone-100 mb-3">常见疑问</h2>
                     <p class="text-stone-600 dark:text-stone-300 text-sm">
-                        预约免费一对一咨询前，你需要知道的一切。
+                        预约免费一对一咨询前，您需要知道的一切。
                     </p>
                 </div>
 
@@ -596,33 +608,44 @@ button,a{-webkit-tap-highlight-color:transparent}
                     <!-- FAQ Item 1 -->
                     <div class="bg-white dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700/80 overflow-hidden shadow-xs">
                         <button type="button" onclick="toggleFaq(event, 1)" class="w-full p-5 sm:p-6 text-left font-serif font-normal text-base sm:text-lg text-[#1C1917] dark:text-stone-100 flex items-center justify-between gap-4">
-                            <span>探索咨询需要付费或有任何义务吗？</span>
+                            <span>初步沟通需要付费或有任何义务吗？</span>
                             <i id="faq-icon-1" class="fa-solid fa-plus text-[#B08B48] text-sm transition-transform duration-200"></i>
                         </button>
                         <div id="faq-answer-1" class="hidden px-5 sm:px-6 pb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed border-t border-stone-100 dark:border-stone-700/60 pt-4">
-                            不需要。探索咨询完全免费，没有任何义务。它的目的，是在你投入任何费用或时间之前，先评估我们的功能性诊断营养（Functional Diagnostic Nutrition）方法是否符合你的健康目标。
+                            不需要。初步沟通完全免费，没有任何义务。在您投入时间和费用之前，可以先了解这套功能性诊断营养方案是否匹配您的健康目标。
                         </div>
                     </div>
 
                     <!-- FAQ Item 2 -->
                     <div class="bg-white dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700/80 overflow-hidden shadow-xs">
                         <button type="button" onclick="toggleFaq(event, 2)" class="w-full p-5 sm:p-6 text-left font-serif font-normal text-base sm:text-lg text-[#1C1917] dark:text-stone-100 flex items-center justify-between gap-4">
-                            <span>预约这场咨询之前，需要先做功能性检测吗？</span>
+                            <span>20分钟能解决问题吗？</span>
                             <i id="faq-icon-2" class="fa-solid fa-plus text-[#B08B48] text-sm transition-transform duration-200"></i>
                         </button>
                         <div id="faq-answer-2" class="hidden px-5 sm:px-6 pb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed border-t border-stone-100 dark:border-stone-700/60 pt-4">
-                            完全不需要。在初次探索咨询中，我们不预设任何前提，也不要求你已有检测报告。我们会回顾你的症状史、解答你的疑问，并判断未来功能性检测是否对你有帮助。
+                            不能。这不是诊疗，也不是调理方案，只是一次初步匹配沟通。完整的根源排查、调理规划，是后续单独的服务。
                         </div>
                     </div>
 
                     <!-- FAQ Item 3 -->
                     <div class="bg-white dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700/80 overflow-hidden shadow-xs">
                         <button type="button" onclick="toggleFaq(event, 3)" class="w-full p-5 sm:p-6 text-left font-serif font-normal text-base sm:text-lg text-[#1C1917] dark:text-stone-100 flex items-center justify-between gap-4">
-                            <span>一对一视频通话是如何进行的？</span>
+                            <span>你们是医生，可以开药方吗？</span>
                             <i id="faq-icon-3" class="fa-solid fa-plus text-[#B08B48] text-sm transition-transform duration-200"></i>
                         </button>
                         <div id="faq-answer-3" class="hidden px-5 sm:px-6 pb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed border-t border-stone-100 dark:border-stone-700/60 pt-4">
-                            所有通话都通过安全的视频链接在线上进行。无论你身在何处，都可以在家中或办公室的私密空间里轻松参加。
+                            我们不做临床诊断，不开处方药物。我们从营养、生活方式、压力管理等角度帮您调理身体基础环境。如果您有明确疾病，依然需要遵从主治医生的方案。
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white dark:bg-stone-800/80 rounded-2xl border border-stone-200 dark:border-stone-700/80 overflow-hidden shadow-xs">
+                        <button type="button" onclick="toggleFaq(event, 4)" class="w-full p-5 sm:p-6 text-left font-serif font-normal text-base sm:text-lg text-[#1C1917] dark:text-stone-100 flex items-center justify-between gap-4">
+                            <span>哪些情况不太适合这个服务？</span>
+                            <i id="faq-icon-4" class="fa-solid fa-plus text-[#B08B48] text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="faq-answer-4" class="hidden px-5 sm:px-6 pb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed border-t border-stone-100 dark:border-stone-700/60 pt-4">
+                            急性急症、需要立刻就医的情况；正在严重发作的精神危机；只想快速吃药、立刻消除症状，不愿意调整长期生活习惯的朋友。
                         </div>
                     </div>
                 </div>
@@ -633,9 +656,9 @@ button,a{-webkit-tap-highlight-color:transparent}
         <section id="booking" class="py-16 bg-[#1C1917] text-[#FAF8F5] text-center px-4 relative overflow-hidden">
             <div class="max-w-3xl mx-auto relative z-10">
                 <span class="gold-label text-xs font-medium uppercase tracking-widest text-[#B08B48] block mb-3">迈出下一步</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-normal mb-4">准备好探究你的根本原因了吗？</h2>
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal mb-4">准备好探究您的根本原因了吗？</h2>
                 <p class="text-stone-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                    立即预约你的免费一对一线上探索咨询。没有压力，没有义务，只为让你清楚知道功能性调查是否适合你。
+                    立即预约您的免费一对一线上初步沟通。没有压力，没有义务，只为让您清楚知道功能性调查是否适合您。
                 </p>
                 <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-[#B08B48]/40 max-w-md mx-auto text-left">
                     <div class="flex items-center gap-3 mb-4">
@@ -643,12 +666,12 @@ button,a{-webkit-tap-highlight-color:transparent}
                             <i class="fa-solid fa-calendar-check dark:text-[#C5A880]"></i>
                         </div>
                         <div>
-                            <div class="font-semibold text-sm">一对一线上探索咨询</div>
+                            <div class="font-semibold text-sm">一对一线上初步沟通</div>
                             <div class="text-xs text-stone-300">20 分钟 • 私人视频咨询</div>
                         </div>
                     </div>
                     <a href="#" onclick="openDiscoveryModal(event)" class="w-full py-3.5 rounded-xl bg-[#B08B48] text-white font-bold text-sm hover:bg-[#967233] transition-all shadow-lg text-center uppercase tracking-wider block">
-                        预约你的免费咨询
+                        预约您的免费咨询
                     </a>
                 </div>
             </div>
@@ -663,24 +686,24 @@ button,a{-webkit-tap-highlight-color:transparent}
             <button type="button" onclick="closeDiscoveryModal()" aria-label="关闭" class="absolute top-5 right-5 text-stone-400 hover:text-[#1C1917] dark:hover:text-white text-xl font-bold">&times;</button>
             <div class="mb-5">
                 <span class="gold-label text-xs font-bold uppercase tracking-widest text-[#B08B48] block mb-1">免费一对一线上通话</span>
-                <h3 class="text-2xl font-serif font-bold text-[#1C1917] dark:text-white">申请你的探索咨询</h3>
-                <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">简单告诉我们你的情况，我们会与你联系安排时间。</p>
+                <h3 class="text-2xl font-serif font-bold text-[#1C1917] dark:text-white">申请您的初步沟通</h3>
+                <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">简单告诉我们您的情况，我们会与您联系安排时间。</p>
             </div>
             <form id="discovery-form" onsubmit="handleDiscoverySubmit(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs sm:text-sm font-semibold text-[#1C1917] dark:text-stone-300 mb-1.5">1. 你最想探讨哪方面？</label>
+                    <label class="block text-xs sm:text-sm font-semibold text-[#1C1917] dark:text-stone-300 mb-1.5">1. 您最想探讨哪方面？</label>
                     <select id="dc-focus" name="Focus Area" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none">
-                        <option>下午三点精力低谷、午后疲乏虚脱</option>
-                        <option>餐后腹胀膨隆</option>
-                        <option>脑雾 · 专注力衰退</option>
-                        <option>凌晨三点易醒、思绪纷乱</option>
-                        <option>减重困难与代谢抵抗</option>
-                        <option>皮肤反复发炎、成人痘</option>
+                        <option>下午三点容易犯困、午后疲惫乏力</option>
+                        <option>餐后腹胀</option>
+                        <option>脑子发懵、注意力下降</option>
+                        <option>凌晨3点容易醒、思绪停不下来</option>
+                        <option>很难减重、代谢调节差</option>
+                        <option>皮肤反复发炎、反复长成人痘</option>
                         <option>其他</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs sm:text-sm font-semibold text-[#1C1917] dark:text-stone-300 mb-1.5">2. 你目前处于健康旅程的哪个阶段？</label>
+                    <label class="block text-xs sm:text-sm font-semibold text-[#1C1917] dark:text-stone-300 mb-1.5">2. 您目前处于健康旅程的哪个阶段？</label>
                     <select id="dc-stage" name="Journey Stage" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none">
                         <option>刚接触功能医学</option>
                         <option>做过一些检测，但仍在寻找答案</option>
@@ -688,9 +711,9 @@ button,a{-webkit-tap-highlight-color:transparent}
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs sm:text-sm font-semibold text-[#1C1917] dark:text-stone-300 mb-1.5">3. 你的姓名与电邮（用于探索咨询）</label>
-                    <input id="dc-name" type="text" name="Full Name" placeholder="你的姓名" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none mb-2.5">
-                    <input id="dc-email" type="email" name="Email" placeholder="你的电邮地址" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none">
+                    <label class="block text-xs sm:text-sm font-semibold text-[#1C1917] dark:text-stone-300 mb-1.5">3. 您的姓名与电邮（用于初步沟通）</label>
+                    <input id="dc-name" type="text" name="Full Name" placeholder="您的姓名" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none mb-2.5">
+                    <input id="dc-email" type="email" name="Email" placeholder="您的电邮地址" required class="w-full p-3 rounded-xl border border-stone-200 dark:border-stone-700 bg-[#FAF8F5] dark:bg-stone-900 text-[#1C1917] dark:text-white text-xs sm:text-sm focus:border-[#B08B48] focus:outline-none">
                 </div>
                 <div id="dc-status" class="hidden text-xs text-center py-2.5 px-3 rounded-xl transition-all"></div>
                 <div class="space-y-2">
@@ -705,7 +728,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                 <div class="w-12 h-12 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto text-xl font-bold">&#10003;</div>
                 <div>
                     <h4 id="dc-success-title" class="text-xl font-serif font-bold text-[#1C1917] dark:text-white">申请已送出</h4>
-                    <p id="dc-success-text" class="text-xs sm:text-sm text-stone-500 dark:text-stone-300 mt-1 leading-relaxed">谢谢你。我们会尽快与你联系，安排探索咨询。</p>
+                    <p id="dc-success-text" class="text-xs sm:text-sm text-stone-500 dark:text-stone-300 mt-1 leading-relaxed">谢谢您。我们会尽快与您联系，安排初步沟通。</p>
                 </div>
                 <button type="button" onclick="closeDiscoveryModal(); resetDiscoveryForm();" class="px-6 py-2 rounded-full border border-stone-200 dark:border-stone-700 text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-300 hover:text-[#1C1917]">关闭窗口</button>
             </div>
@@ -722,11 +745,11 @@ button,a{-webkit-tap-highlight-color:transparent}
             <div class="flex items-center justify-center gap-4 text-[#E5CE9F] text-xs">
                 <a href="https://kelliewfdnp.substack.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Substack 文章</a>
                 <span>•</span>
-                <a href="#" onclick="openDiscoveryModal(event)" class="hover:text-white transition-colors">探索咨询预筛</a>
+                <a href="#" onclick="openDiscoveryModal(event)" class="hover:text-white transition-colors">初步沟通预筛</a>
             </div>
 
             <p class="max-w-3xl mx-auto text-[11px] text-stone-500 leading-relaxed">
-                免责声明：功能性诊断营养（Functional Diagnostic Nutrition）服务不诊断、治疗或治愈任何医学疾病。一对一探索咨询是一场教育性的预筛会谈，用于评估双方是否适合开展健康辅导服务。
+                免责声明：FDN服务不诊断、治疗或治愈任何医学疾病。一对一初步沟通是一场教育性的预筛会谈，用于了解双方是否适合开展健康辅导服务。
             </p>
             <p class="text-[11px] text-stone-600">© 2026 Radical Wellness 版权所有。</p>
         </div>
@@ -757,11 +780,11 @@ button,a{-webkit-tap-highlight-color:transparent}
         // Symptom Data Store for Interactive Health Decoder
         const symptomsData = [
             {
-                title: "下午三点精力低谷、午后疲乏虚脱",
+                title: "下午三点容易犯困、午后疲惫乏力",
                 simple: {
-                    desc: "身体细胞的“动力火花塞”可能正缺乏矿物质供能。持续压力或血糖下滑耗尽细胞储备后，你的能量引擎会在午饭后直接进入乏力怠机状态。",
+                    desc: "身体细胞的“动力火花塞”可能正缺乏矿物质供能。持续压力或血糖下滑耗尽细胞储备后，您的能量引擎会在午饭后直接进入乏力待机状态。",
                     bullets: [
-                        "分析你的日常压力节律与进餐时间习惯",
+                        "分析您的日常压力节律与进餐时间习惯",
                         "评估是否和矿物质水平、血糖波动相关",
                         "判断是否适合开展功能代谢检测"
                     ]
@@ -776,11 +799,11 @@ button,a{-webkit-tap-highlight-color:transparent}
                 }
             },
             {
-                title: "餐后腹胀膨隆",
+                title: "餐后腹胀",
                 simple: {
-                    desc: "你的消化微生态环境可能已经失衡。当胃酸分泌或消化能力受损时，未被充分分解的食物会在肠道内发酵，引发不适与腹胀。",
+                    desc: "您的消化微生态环境可能已经失衡。当胃酸分泌或消化能力受损时，未被充分分解的食物会在肠道内发酵，引发不适与腹胀。",
                     bullets: [
-                        "梳理你的消化症状史与食物不耐受反应",
+                        "梳理您的消化症状史与食物不耐受反应",
                         "区分上消化道与下消化道功能性失衡",
                         "评估是否适合做全套粪便/微生物组筛查"
                     ]
@@ -795,7 +818,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                 }
             },
             {
-                title: "脑雾 · 专注力衰退",
+                title: "脑子发懵、注意力下降",
                 simple: {
                     desc: "当体内滤过通路（如肠道、肝脏）发生淤堵时，代谢层面的“背景噪音”不断蓄积，会降低大脑信息处理速度，削弱头脑清晰度。",
                     bullets: [
@@ -814,9 +837,9 @@ button,a{-webkit-tap-highlight-color:transparent}
                 }
             },
             {
-                title: "凌晨三点易醒、思绪纷乱",
+                title: "凌晨3点容易醒、思绪停不下来",
                 simple: {
-                    desc: "睡眠中途体内能量储备不足，肾上腺会分泌应急肾上腺素，维持大脑供能，使你清醒醒来。",
+                    desc: "睡眠中途体内能量储备不足，肾上腺会分泌应急肾上腺素，维持大脑供能，使您清醒醒来。",
                     bullets: [
                         "评估晚间饮食习惯与昼夜睡眠节律",
                         "分析皮质醇昼夜节律相关线索",
@@ -833,7 +856,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                 }
             },
             {
-                title: "减重困难与代谢抵抗",
+                title: "很难减重、代谢调节差",
                 simple: {
                     desc: "长期压力信号持续存在时，身体会判定处于应激状态，为保障生存而储存能量储备；即便控制热量摄入，代谢速率依旧下降。",
                     bullets: [
@@ -852,7 +875,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                 }
             },
             {
-                title: "皮肤反复发炎、成人痘",
+                title: "皮肤反复发炎、反复长成人痘",
                 simple: {
                     desc: "皮肤常常是人体第二排泄通道。当体内排毒通路（肠道、肝脏）淤堵时，代谢毒素溢出，就会表现为皮肤泛红发作、长痘以及顽固刺激性皮炎。",
                     bullets: [
@@ -890,11 +913,11 @@ button,a{-webkit-tap-highlight-color:transparent}
             if (currentPerspectiveMode === 'simple') {
                 btnLabels.forEach(l => l.textContent = '通俗版');
                 heroTag.innerHTML = `<i class="fa-solid fa-compass"></i> 视角：通俗比喻`;
-                heroText.textContent = `在决定进行复杂检测或大幅调整生活方式之前，这场初次探索咨询是我们彼此认识的起点。在这通免费的一对一视频通话中，我们会梳理你的健康时间线，倾听你的身体一路经历了什么，并评估功能医学调查是否真正适合你的目标。`;
+                heroText.textContent = `在决定进行复杂检测或大幅调整生活方式之前，这场初次沟通是我们彼此认识的起点。在这通免费的一对一视频通话中，我们会梳理您的健康历程，倾听您的身体一路经历了什么，并看看功能医学调查是否真正适合您的目标。`;
             } else {
                 btnLabels.forEach(l => l.textContent = '临床版');
                 heroTag.innerHTML = `<i class="fa-solid fa-microscope"></i> 视角：临床概念`;
-                heroText.textContent = `探索咨询是一场初步的 FDN 分诊通话。我们会分析代谢负荷、系统反馈回路与症状持续时间，以判断是否需要进行全面的功能性诊断检测（DUTCH、GI-MAP）。`;
+                heroText.textContent = `初步沟通是一场 FDN 分诊通话。我们会分析代谢负荷、系统反馈回路与症状持续时间，以判断是否需要进行全面的功能性诊断检测（DUTCH、GI-MAP）。`;
             }
 
             selectSymptom(null, currentSymptomIndex);
@@ -979,15 +1002,15 @@ button,a{-webkit-tap-highlight-color:transparent}
 
                 if (totalScore >= 7) {
                     resultTitle.textContent = "高度契合";
-                    resultText.textContent = "你的回答显示，一对一功能医学探索咨询非常适合你。我们会在通话中梳理你的健康时间线，并评估根源检测的选择。";
+                    resultText.textContent = "您的回答显示，一对一功能医学初步沟通非常适合您。我们会在通话中梳理您的健康历程，并了解根源检测有哪些选择。";
                     resultIcon.className = "fa-solid fa-circle-check text-[#B08B48]";
                 } else if (totalScore >= 5) {
                     resultTitle.textContent = "很有潜力";
-                    resultText.textContent = "探索咨询对你可能大有帮助。在咨询中，我们会厘清功能性调查与常规做法的差异，让你能做出明智的选择。";
+                    resultText.textContent = "初步沟通对您可能大有帮助。在咨询中，我们会厘清功能性调查与常规做法的差异，让您能做出明智的选择。";
                     resultIcon.className = "fa-solid fa-compass text-[#B08B48]";
                 } else {
                     resultTitle.textContent = "建议先做了解型咨询";
-                    resultText.textContent = "探索咨询将帮助你了解功能医学的原理，让你判断探究根本原因是否符合你的个人目标。";
+                    resultText.textContent = "初步沟通将帮助您了解功能医学的原理，让您判断探究根本原因是否符合您的个人目标。";
                     resultIcon.className = "fa-solid fa-book-open text-[#B08B48]";
                 }
 
@@ -1079,10 +1102,10 @@ button,a{-webkit-tap-highlight-color:transparent}
             const name = document.getElementById('dc-name').value.trim();
             const email = document.getElementById('dc-email').value.trim();
             if (!name || !email) { dcStatus('\u26A0\uFE0F 请先填写姓名与电邮。', true); return; }
-            const msg = `你好 Kel，我想预约免费的 *一对一探索咨询*。\n\n` +
+            const msg = `您好 Kel，我想预约免费的 *一对一初步沟通*。\n\n` +
                 `*姓名：* ${name}\n*电邮：* ${email}\n*关注方向：* ${focus}\n*健康旅程阶段：* ${stage}`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(msg)}`, '_blank');
-            dcShowSuccess('申请已备妥', '你的资料已整理完毕。请在 WhatsApp 中完成发送，即可与 Kel 直接联系。');
+            dcShowSuccess('申请已备妥', '您的资料已整理完毕。请在 WhatsApp 中完成发送，即可与 Kel 直接联系。');
         }
         async function handleDiscoverySubmit(e) {
             e.preventDefault();
@@ -1099,12 +1122,12 @@ button,a{-webkit-tap-highlight-color:transparent}
                         'Applicant Email': document.getElementById('dc-email').value,
                         'Focus Area': document.getElementById('dc-focus').value,
                         'Journey Stage': document.getElementById('dc-stage').value,
-                        _subject: `新的探索咨询申请：${name}`,
+                        _subject: `新的初步沟通申请：${name}`,
                         _captcha: 'false'
                     })
                 });
                 if (!res.ok) throw new Error('Request failed');
-                dcShowSuccess('申请已送出', '谢谢你。我们会尽快与你联系，安排探索咨询。');
+                dcShowSuccess('申请已送出', '谢谢您。我们会尽快与您联系，安排初步沟通。');
             } catch (err) {
                 btn.disabled = false; btn.innerText = '或通过网页表单提交';
                 dcStatus('无法发送网页表单，请改用 WhatsApp 申请按钮。', true);
